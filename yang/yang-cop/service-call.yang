@@ -2,27 +2,27 @@ module service-call {
 
     yang-version 1;
 
-    namespace "http://ict-strauss.eu/cop/service-call";
+    namespace "urn:ietf:params:xml:ns:yang:service-call";
 
     prefix s-call;
     organization "CTTC";
 
     description  "YANG version of the Common Orchestration Protocol (COP).";
 
-    revision "2015-05-30" {
+    revision "2016-12-02" {
         description
-        "Service call module for STRAUSS";
+        "Service call module for 5G-Crosshaul";
     }
 
     typedef qos_class_enumeration {
     	type enumeration {
     	    enum gold {
-    	        description "Gold QoS Class";
     	        value 1;
+    	        description "Gold QoS Class";
     	    }
     	    enum silver {
-    	        description "Silver QoS Class";
     	        value 2;
+    	        description "Silver QoS Class";
     	    }
     	}
     }
@@ -30,20 +30,20 @@ module service-call {
     typedef transport_layer_type_enumeration {
         type enumeration {
             enum dwdm_link {
-                description "Setup a dwdm link";
                 value 1;
+                description "Setup a dwdm link";
             }
             enum ethernet {
-                description "Setup an end to end ethernet path";
                 value 2;
+                description "Setup an end to end ethernet path";
             }
             enum ethernet_broadcast {
-                description "Setup an ethernet Flood";
                 value 3;
+                description "Setup an ethernet Flood";
             }
             enum mpls {
-                description "Setup an MPLS path";
                 value 4;
+                description "Setup an MPLS path";
             }
         }
     }
@@ -51,27 +51,32 @@ module service-call {
     typedef direction_type_enumeration{
         type enumeration{
             enum unidir{
-                description "Unidirectional service";
                 value 1;
+                description "Unidirectional service";
             }
             enum bidir{
-                description "Bidirectional service";
                 value 2;
+                description "Bidirectional service";
             }
         }
     }
 
-    grouping transport_layer-type{
-        description "";
-        leaf layer {
-            type transport_layer_type_enumeration;
+    typedef action_type_enumeration{
+        type enumeration{
+            enum forward{
+                value 1;
+                description "Forwarding action";
+            }
+            enum push_tag{
+                value 2;
+                description "PUSH LABEL TAG";
+            }
+            enum pop_tag{
+                value 3;
+                description "POP LABEL TAG";
+            }
         }
-        leaf layer_id {
-            type string;
-        }
-        leaf direction{
-            type direction_type_enumeration;
-        }
+        default forward;
     }
 
     typedef protocol-type{
@@ -97,6 +102,22 @@ module service-call {
             enum MAC {
                 value 3;
             }
+        }
+    }
+
+    grouping transport_layer-type{
+        description "";
+        leaf layer {
+            type transport_layer_type_enumeration;
+        }
+        leaf layer_id {
+            type string;
+        }
+        leaf direction{
+            type direction_type_enumeration;
+        }
+        leaf action{
+            type action_type_enumeration;
         }
     }
 
@@ -275,6 +296,9 @@ module service-call {
         leaf experimental_teid{
             type int64;// EXPERIMENTAL MATCH
         }
+        container include_path{
+            uses path-type;
+        }
     }
 
 
@@ -288,12 +312,9 @@ module service-call {
         leaf router_id{
             type string;
         }
-        leaf interface_id{
+        leaf edge_end_id{
             type string;
         }
-        /*leaf topology-component{
-            type topo:end-ref;
-        }*/
     }
 
     grouping traffic_params{
@@ -302,8 +323,8 @@ module service-call {
             description "Reserved Bandwidth measured in Mb/s i.e. 10, 100, 1000 Mb/s";
             type int32;
         }
-		leaf latency {
-			description "Connection latency measured in ms";
+		    leaf latency {
+			      description "Connection latency measured in ms";
             type int32;
         }
 
@@ -371,18 +392,22 @@ module service-call {
         description "A call represents an “intent-request” for connectivity within a Forwarding-Domain between the endpoints. Call is distinct from the Connection that realizes the Call.";
 
         leaf call_id{
+            mandatory true;
             type string;
         }
         container aEnd{
+            mandatory true;
             uses endpoint;
         }
         container zEnd{
+            mandatory true;
             uses endpoint;
         }
         container transport_layer{
             uses transport_layer-type;
         }
         leaf operStatus {
+            config false;
             description "Running status";
             type enumeration {
                 enum down {
@@ -422,6 +447,7 @@ module service-call {
             uses call;
         }
     }
+    
     container connections{
         list connection {
             key "connection_id";

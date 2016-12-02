@@ -2,7 +2,7 @@ module service-topology {
 
     yang-version 1;
 
-    namespace "http://ict-strauss.eu/cop/service-topology";
+    namespace "urn:ietf:params:xml:ns:yang:service-topology";
 
     prefix s-topology;
 
@@ -10,9 +10,9 @@ module service-topology {
 
     description "YANG version of the Common Orchestration Protocol (COP).";
 
-    revision "2015-05-30" {
+    revision "2016-12-02" {
         description
-        "Service Topology module for STRAUSS";
+        "Service Topology module for 5G-Crosshaul";
     }
 
     typedef topology-ref {
@@ -26,12 +26,16 @@ module service-topology {
     typedef edge_type_enumeration {
         type enumeration {
             enum dwdm_edge {
-                description "DWDM link";
                 value 1;
+                description "DWDM link";
             }
             enum eth_edge {
-                description "Ethernet link";
                 value 2;
+                description "Ethernet link";
+            }
+            enum wireless_edge {
+                value 3;
+                description "Wireless Ethernet link";
             }
         }
     }
@@ -39,12 +43,12 @@ module service-topology {
     typedef switching_cap_enumeration {
         type enumeration {
             enum lsc {
-                description "lsc sw_cap";
                 value 1;
+                description "Label Switching Capability sw_cap";
             }
             enum psc {
-                description "psc sw_cap";
                 value 2;
+                description "Packet Switching Capability sw_cap";
             }
         }
     }
@@ -56,14 +60,20 @@ module service-topology {
         leaf-list underlay-topology {
             description "List of topologies from which this depends on.";
             type topology-ref;
-		}
+        }
         list nodes{
-	    key "node_id";
+            config false;
+            key "node_id";
             uses node;
         }
         list edges{
+            config false;
             key "edge_id";
             uses edge;
+        }
+        container topology_types{
+            description "Empty container used to be augmented with one or more empty optional
+                    container to indicate the topology type(s)";
         }
     }
 
@@ -96,8 +106,9 @@ module service-topology {
         leaf domain{
             type string;
         }
-        leaf nodetype{
-            type string;
+        container node_type{
+            description "Empty container used to be augmented with  a new empty optional
+                    container to indicate the new Node Type";
         }
         list edge_end{
             key "edge_end_id";
@@ -108,15 +119,17 @@ module service-topology {
     grouping edge{
         leaf edge_type{
             mandatory true;
-	        type edge_type_enumeration;
-	    }
+            type edge_type_enumeration;
+	      }
         leaf edge_id{
+            mandatory true;
             type string;
         }
         leaf name{
             type string;
         }
         leaf switching_cap{
+            mandatory true;
             type string;
         }
         leaf metric{
@@ -128,20 +141,19 @@ module service-topology {
         leaf unreserv_bw{
             type string;
         }
+        leaf latency{
+            type string;
+        }
         container source{
-	    config false;
             uses node;
         }
         container target{
-	    config false;
             uses node;
         }
         container local_ifid{
-	    config false;
             uses edge_end;
         }
         container remote_ifid{
-	    config false;
             uses edge_end;
         }
     }
@@ -178,12 +190,31 @@ module service-topology {
     grouping eth_edge{
         uses edge;
     }
-
+    
+    grouping service_end_point_type{
+        leaf sep_id{
+            type string;
+        }
+        leaf name{
+            type string;
+        }
+        leaf edge_end_id{
+            type string;
+        }
+        leaf node_id{
+            type string;
+        }
+    }
+    
     container topologies{
         config false;
         list topology{
             key "topology_id";
             uses topology;
+        }
+        list service_end_point{
+            key "sep_id";
+            uses service_end_point_type;
         }
     }
 
