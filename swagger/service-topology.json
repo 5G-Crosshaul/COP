@@ -1,0 +1,986 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "description": "service-topology API generated from service-topology.yang",
+        "title": "service-topology API"
+    },
+    "host": "localhost:8080",
+    "basePath": "/restconf",
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "/config/topologies/": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/TopologiesSchema"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: topologies",
+                "parameters": [],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve topologies",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveTopologies"
+            }
+        },
+        "/config/topologies/topology/": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "items": {
+                                "type": "string",
+                                "x-path": "/topologies/topology/{topologyId}/"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: topology",
+                "parameters": [],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve topology",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveTopologiesTopologyTopology"
+            }
+        },
+        "/config/topologies/topology/{topologyId}/": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Topology"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: topology",
+                "parameters": [
+                    {
+                        "description": "ID of topologyId",
+                        "required": true,
+                        "type": "string",
+                        "name": "topologyId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve topology by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveTopologiesTopologyTopologyById"
+            }
+        },
+        "/config/topologies/topology/{topologyId}/nodes/": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "items": {
+                                "type": "string",
+                                "x-path": "/topologies/topology/{topologyId}/nodes/{nodeId}/"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: nodes",
+                "parameters": [
+                    {
+                        "description": "ID of topologyId",
+                        "required": true,
+                        "type": "string",
+                        "name": "topologyId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve nodes",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveTopologiesTopologyNodesNodes"
+            }
+        },
+        "/config/topologies/topology/{topologyId}/nodes/{nodeId}/": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Node"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: nodes",
+                "parameters": [
+                    {
+                        "description": "ID of topologyId",
+                        "required": true,
+                        "type": "string",
+                        "name": "topologyId",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of nodeId",
+                        "required": true,
+                        "type": "string",
+                        "name": "nodeId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve nodes by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveTopologiesTopologyNodesNodesById"
+            }
+        },
+        "/config/topologies/topology/{topologyId}/nodes/{nodeId}/edge_end/": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "items": {
+                                "type": "string",
+                                "x-path": "/topologies/topology/{topologyId}/nodes/{nodeId}/edge_end/{edgeEndId}/"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: edge_end",
+                "parameters": [
+                    {
+                        "description": "ID of topologyId",
+                        "required": true,
+                        "type": "string",
+                        "name": "topologyId",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of nodeId",
+                        "required": true,
+                        "type": "string",
+                        "name": "nodeId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve edge_end",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveTopologiesTopologyNodesEdgeEndEdgeEnd"
+            }
+        },
+        "/config/topologies/topology/{topologyId}/nodes/{nodeId}/edge_end/{edgeEndId}/": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/EdgeEnd"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: edge_end",
+                "parameters": [
+                    {
+                        "description": "ID of topologyId",
+                        "required": true,
+                        "type": "string",
+                        "name": "topologyId",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of nodeId",
+                        "required": true,
+                        "type": "string",
+                        "name": "nodeId",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of edgeEndId",
+                        "required": true,
+                        "type": "string",
+                        "name": "edgeEndId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve edge_end by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveTopologiesTopologyNodesEdgeEndEdgeEndById"
+            }
+        },
+        "/config/topologies/topology/{topologyId}/edges/": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "items": {
+                                "type": "string",
+                                "x-path": "/topologies/topology/{topologyId}/edges/{edgeId}/"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: edges",
+                "parameters": [
+                    {
+                        "description": "ID of topologyId",
+                        "required": true,
+                        "type": "string",
+                        "name": "topologyId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve edges",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveTopologiesTopologyEdgesEdges"
+            }
+        },
+        "/config/topologies/topology/{topologyId}/edges/{edgeId}/": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Edge"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: edges",
+                "parameters": [
+                    {
+                        "description": "ID of topologyId",
+                        "required": true,
+                        "type": "string",
+                        "name": "topologyId",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of edgeId",
+                        "required": true,
+                        "type": "string",
+                        "name": "edgeId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve edges by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveTopologiesTopologyEdgesEdgesById"
+            }
+        },
+        "/config/topologies/topology/{topologyId}/edges/{edgeId}/source/": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Node"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: source",
+                "parameters": [
+                    {
+                        "description": "ID of topologyId",
+                        "required": true,
+                        "type": "string",
+                        "name": "topologyId",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of edgeId",
+                        "required": true,
+                        "type": "string",
+                        "name": "edgeId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve source",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveTopologiesTopologyEdgesSourceSource"
+            }
+        },
+        "/config/topologies/topology/{topologyId}/edges/{edgeId}/source/edge_end/": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "items": {
+                                "type": "string",
+                                "x-path": "/topologies/topology/{topologyId}/edges/{edgeId}/source/edge_end/{edgeEndId}/"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: edge_end",
+                "parameters": [
+                    {
+                        "description": "ID of topologyId",
+                        "required": true,
+                        "type": "string",
+                        "name": "topologyId",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of edgeId",
+                        "required": true,
+                        "type": "string",
+                        "name": "edgeId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve edge_end",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveTopologiesTopologyEdgesSourceEdgeEndEdgeEnd"
+            }
+        },
+        "/config/topologies/topology/{topologyId}/edges/{edgeId}/source/edge_end/{edgeEndId}/": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/EdgeEnd"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: edge_end",
+                "parameters": [
+                    {
+                        "description": "ID of topologyId",
+                        "required": true,
+                        "type": "string",
+                        "name": "topologyId",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of edgeId",
+                        "required": true,
+                        "type": "string",
+                        "name": "edgeId",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of edgeEndId",
+                        "required": true,
+                        "type": "string",
+                        "name": "edgeEndId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve edge_end by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveTopologiesTopologyEdgesSourceEdgeEndEdgeEndById"
+            }
+        },
+        "/config/topologies/topology/{topologyId}/edges/{edgeId}/target/": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Node"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: target",
+                "parameters": [
+                    {
+                        "description": "ID of topologyId",
+                        "required": true,
+                        "type": "string",
+                        "name": "topologyId",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of edgeId",
+                        "required": true,
+                        "type": "string",
+                        "name": "edgeId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve target",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveTopologiesTopologyEdgesTargetTarget"
+            }
+        },
+        "/config/topologies/topology/{topologyId}/edges/{edgeId}/target/edge_end/": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "items": {
+                                "type": "string",
+                                "x-path": "/topologies/topology/{topologyId}/edges/{edgeId}/target/edge_end/{edgeEndId}/"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: edge_end",
+                "parameters": [
+                    {
+                        "description": "ID of topologyId",
+                        "required": true,
+                        "type": "string",
+                        "name": "topologyId",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of edgeId",
+                        "required": true,
+                        "type": "string",
+                        "name": "edgeId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve edge_end",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveTopologiesTopologyEdgesTargetEdgeEndEdgeEnd"
+            }
+        },
+        "/config/topologies/topology/{topologyId}/edges/{edgeId}/target/edge_end/{edgeEndId}/": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/EdgeEnd"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: edge_end",
+                "parameters": [
+                    {
+                        "description": "ID of topologyId",
+                        "required": true,
+                        "type": "string",
+                        "name": "topologyId",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of edgeId",
+                        "required": true,
+                        "type": "string",
+                        "name": "edgeId",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of edgeEndId",
+                        "required": true,
+                        "type": "string",
+                        "name": "edgeEndId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve edge_end by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveTopologiesTopologyEdgesTargetEdgeEndEdgeEndById"
+            }
+        },
+        "/config/topologies/topology/{topologyId}/edges/{edgeId}/local_ifid/": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/EdgeEnd"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: local_ifid",
+                "parameters": [
+                    {
+                        "description": "ID of topologyId",
+                        "required": true,
+                        "type": "string",
+                        "name": "topologyId",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of edgeId",
+                        "required": true,
+                        "type": "string",
+                        "name": "edgeId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve local_ifid",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveTopologiesTopologyEdgesLocalIfidLocalIfid"
+            }
+        },
+        "/config/topologies/topology/{topologyId}/edges/{edgeId}/remote_ifid/": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/EdgeEnd"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: remote_ifid",
+                "parameters": [
+                    {
+                        "description": "ID of topologyId",
+                        "required": true,
+                        "type": "string",
+                        "name": "topologyId",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of edgeId",
+                        "required": true,
+                        "type": "string",
+                        "name": "edgeId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve remote_ifid",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveTopologiesTopologyEdgesRemoteIfidRemoteIfid"
+            }
+        },
+        "/config/topologies/service_end_point/": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "items": {
+                                "type": "string",
+                                "x-path": "/topologies/service_end_point/{sepId}/"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: service_end_point",
+                "parameters": [],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve service_end_point",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveTopologiesServiceEndPointServiceEndPoint"
+            }
+        },
+        "/config/topologies/service_end_point/{sepId}/": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/ServiceEndPointType"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: service_end_point",
+                "parameters": [
+                    {
+                        "description": "ID of sepId",
+                        "required": true,
+                        "type": "string",
+                        "name": "sepId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve service_end_point by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveTopologiesServiceEndPointServiceEndPointById"
+            }
+        },
+        "/streams/update_topology/": {
+            "get": {
+                "schemes": [
+                    "ws"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Topology"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "produces": [
+                    "application/json"
+                ],
+                "description": "Retrieve operation of resource: update_topology",
+                "summary": "Retrieve update_topology by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveUpdateTopologyById"
+            }
+        }
+    },
+    "definitions": {
+        "Node": {
+            "properties": {
+                "edgeEnd": {
+                    "items": {
+                        "$ref": "#/definitions/EdgeEnd"
+                    },
+                    "type": "array",
+                    "x-key": "edgeEndId"
+                },
+                "domain": {
+                    "type": "string"
+                },
+                "nodeId": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "underlayAbstractTopology": {
+                    "items": {
+                        "type": "string",
+                        "description": "List of topology_ids which are represented by this node."
+                    },
+                    "type": "array"
+                }
+            }
+        },
+        "EdgeEnd": {
+            "properties": {
+                "switchingCap": {
+                    "enum": [
+                        "lsc",
+                        "psc"
+                    ],
+                    "type": "string"
+                },
+                "edgeEndId": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "peerNodeId": {
+                    "type": "string"
+                }
+            }
+        },
+        "EthEdge": {
+            "$ref": "#/definitions/Edge"
+        },
+        "Bitmap": {
+            "properties": {
+                "arrayBits": {
+                    "items": {
+                        "type": "integer",
+                        "format": "int16"
+                    },
+                    "type": "array"
+                },
+                "numChannels": {
+                    "type": "integer",
+                    "format": "int16"
+                }
+            }
+        },
+        "Edge": {
+            "discriminator": "edgeType",
+            "properties": {
+                "latency": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "edgeId": {
+                    "type": "string"
+                },
+                "edgeType": {
+                    "enum": [
+                        "dwdm_edge",
+                        "eth_edge",
+                        "wireless_edge"
+                    ],
+                    "type": "string"
+                },
+                "switchingCap": {
+                    "type": "string"
+                },
+                "metric": {
+                    "type": "string"
+                },
+                "maxResvBw": {
+                    "type": "string"
+                },
+                "source": {
+                    "$ref": "#/definitions/Node"
+                },
+                "localIfid": {
+                    "$ref": "#/definitions/EdgeEnd"
+                },
+                "remoteIfid": {
+                    "$ref": "#/definitions/EdgeEnd"
+                },
+                "unreservBw": {
+                    "type": "string"
+                },
+                "target": {
+                    "$ref": "#/definitions/Node"
+                }
+            }
+        },
+        "ServiceEndPointType": {
+            "properties": {
+                "edgeEndId": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "sepId": {
+                    "type": "string"
+                },
+                "nodeId": {
+                    "type": "string"
+                }
+            }
+        },
+        "DwdmChannel": {
+            "properties": {
+                "state": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "g694Id": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            }
+        },
+        "DwdmEdge": {
+            "allOf": [
+                {
+                    "$ref": "#/definitions/Edge"
+                },
+                {
+                    "properties": {
+                        "channels": {
+                            "items": {
+                                "$ref": "#/definitions/DwdmChannel"
+                            },
+                            "type": "array",
+                            "x-key": "g694Id"
+                        },
+                        "bitmap": {
+                            "$ref": "#/definitions/Bitmap"
+                        }
+                    }
+                }
+            ]
+        },
+        "Topology": {
+            "properties": {
+                "topologyId": {
+                    "type": "string"
+                },
+                "underlayTopology": {
+                    "items": {
+                        "type": "string",
+                        "description": "List of topologies from which this depends on."
+                    },
+                    "type": "array"
+                },
+                "nodes": {
+                    "items": {
+                        "$ref": "#/definitions/Node"
+                    },
+                    "type": "array",
+                    "x-key": "nodeId"
+                },
+                "edges": {
+                    "items": {
+                        "$ref": "#/definitions/Edge"
+                    },
+                    "type": "array",
+                    "x-key": "edgeId"
+                }
+            }
+        },
+        "TopologiesSchema": {
+            "properties": {
+                "serviceEndPoint": {
+                    "items": {
+                        "$ref": "#/definitions/ServiceEndPointType"
+                    },
+                    "type": "array",
+                    "x-key": "sepId"
+                },
+                "topology": {
+                    "items": {
+                        "$ref": "#/definitions/Topology"
+                    },
+                    "type": "array",
+                    "x-key": "topologyId"
+                }
+            }
+        }
+    }
+}

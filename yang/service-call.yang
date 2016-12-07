@@ -396,11 +396,9 @@ module service-call {
             type string;
         }
         container aEnd{
-            mandatory true;
             uses endpoint;
         }
         container zEnd{
-            mandatory true;
             uses endpoint;
         }
         container transport_layer{

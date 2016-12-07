@@ -1,0 +1,4368 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "description": "service-call API generated from service-call.yang",
+        "title": "service-call API"
+    },
+    "host": "localhost:8080",
+    "basePath": "/restconf",
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "/streams/update_call/": {
+            "get": {
+                "schemes": [
+                    "ws"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Call"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "produces": [
+                    "application/json"
+                ],
+                "description": "Retrieve operation of resource: update_call",
+                "summary": "Retrieve update_call by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveUpdateCallById"
+            }
+        },
+        "/streams/remove_call/": {
+            "get": {
+                "schemes": [
+                    "ws"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Call"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "produces": [
+                    "application/json"
+                ],
+                "description": "Retrieve operation of resource: remove_call",
+                "summary": "Retrieve remove_call by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveRemoveCallById"
+            }
+        },
+        "/config/calls/": {
+            "put": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Update operation of resource: calls",
+                "parameters": [
+                    {
+                        "required": true,
+                        "description": "callsbody object",
+                        "schema": {
+                            "$ref": "#/definitions/CallsSchema"
+                        },
+                        "name": "calls",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Update calls by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "updateCallsById"
+            },
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Create operation of resource: calls",
+                "parameters": [
+                    {
+                        "required": true,
+                        "description": "callsbody object",
+                        "schema": {
+                            "$ref": "#/definitions/CallsSchema"
+                        },
+                        "name": "calls",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Create calls by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "createCallsById"
+            },
+            "delete": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "produces": [
+                    "application/json"
+                ],
+                "description": "Delete operation of resource: calls",
+                "summary": "Delete calls by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "deleteCallsById"
+            },
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/CallsSchema"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: calls",
+                "parameters": [],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve calls",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveCalls"
+            }
+        },
+        "/config/calls/call/": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "items": {
+                                "type": "string",
+                                "x-path": "/calls/call/{callId}/"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: call",
+                "parameters": [],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve call",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveCallsCallCall"
+            }
+        },
+        "/config/calls/call/{callId}/": {
+            "put": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Update operation of resource: call",
+                "parameters": [
+                    {
+                        "description": "ID of callId",
+                        "required": true,
+                        "type": "string",
+                        "name": "callId",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "callbody object",
+                        "schema": {
+                            "$ref": "#/definitions/Call"
+                        },
+                        "name": "call",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Update call by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "updateCallsCallCallById"
+            },
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Create operation of resource: call",
+                "parameters": [
+                    {
+                        "description": "ID of callId",
+                        "required": true,
+                        "type": "string",
+                        "name": "callId",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "callbody object",
+                        "schema": {
+                            "$ref": "#/definitions/Call"
+                        },
+                        "name": "call",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Create call by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "createCallsCallCallById"
+            },
+            "delete": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Delete operation of resource: call",
+                "parameters": [
+                    {
+                        "description": "ID of callId",
+                        "required": true,
+                        "type": "string",
+                        "name": "callId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Delete call by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "deleteCallsCallCallById"
+            },
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Call"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: call",
+                "parameters": [
+                    {
+                        "description": "ID of callId",
+                        "required": true,
+                        "type": "string",
+                        "name": "callId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve call by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveCallsCallCallById"
+            }
+        },
+        "/config/calls/call/{callId}/aEnd/": {
+            "put": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Update operation of resource: aEnd",
+                "parameters": [
+                    {
+                        "description": "ID of callId",
+                        "required": true,
+                        "type": "string",
+                        "name": "callId",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "aEndbody object",
+                        "schema": {
+                            "$ref": "#/definitions/Endpoint"
+                        },
+                        "name": "aEnd",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Update aEnd by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "updateCallsCallAEndAEndById"
+            },
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Create operation of resource: aEnd",
+                "parameters": [
+                    {
+                        "description": "ID of callId",
+                        "required": true,
+                        "type": "string",
+                        "name": "callId",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "aEndbody object",
+                        "schema": {
+                            "$ref": "#/definitions/Endpoint"
+                        },
+                        "name": "aEnd",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Create aEnd by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "createCallsCallAEndAEndById"
+            },
+            "delete": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Delete operation of resource: aEnd",
+                "parameters": [
+                    {
+                        "description": "ID of callId",
+                        "required": true,
+                        "type": "string",
+                        "name": "callId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Delete aEnd by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "deleteCallsCallAEndAEndById"
+            },
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Endpoint"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: aEnd",
+                "parameters": [
+                    {
+                        "description": "ID of callId",
+                        "required": true,
+                        "type": "string",
+                        "name": "callId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve aEnd",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveCallsCallAEndAEnd"
+            }
+        },
+        "/config/calls/call/{callId}/zEnd/": {
+            "put": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Update operation of resource: zEnd",
+                "parameters": [
+                    {
+                        "description": "ID of callId",
+                        "required": true,
+                        "type": "string",
+                        "name": "callId",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "zEndbody object",
+                        "schema": {
+                            "$ref": "#/definitions/Endpoint"
+                        },
+                        "name": "zEnd",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Update zEnd by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "updateCallsCallZEndZEndById"
+            },
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Create operation of resource: zEnd",
+                "parameters": [
+                    {
+                        "description": "ID of callId",
+                        "required": true,
+                        "type": "string",
+                        "name": "callId",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "zEndbody object",
+                        "schema": {
+                            "$ref": "#/definitions/Endpoint"
+                        },
+                        "name": "zEnd",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Create zEnd by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "createCallsCallZEndZEndById"
+            },
+            "delete": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Delete operation of resource: zEnd",
+                "parameters": [
+                    {
+                        "description": "ID of callId",
+                        "required": true,
+                        "type": "string",
+                        "name": "callId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Delete zEnd by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "deleteCallsCallZEndZEndById"
+            },
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Endpoint"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: zEnd",
+                "parameters": [
+                    {
+                        "description": "ID of callId",
+                        "required": true,
+                        "type": "string",
+                        "name": "callId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve zEnd",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveCallsCallZEndZEnd"
+            }
+        },
+        "/config/calls/call/{callId}/transport_layer/": {
+            "put": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Update operation of resource: transport_layer",
+                "parameters": [
+                    {
+                        "description": "ID of callId",
+                        "required": true,
+                        "type": "string",
+                        "name": "callId",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "transport_layerbody object",
+                        "schema": {
+                            "$ref": "#/definitions/TransportLayerType"
+                        },
+                        "name": "transport_layer",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Update transport_layer by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "updateCallsCallTransportLayerTransportLayerById"
+            },
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Create operation of resource: transport_layer",
+                "parameters": [
+                    {
+                        "description": "ID of callId",
+                        "required": true,
+                        "type": "string",
+                        "name": "callId",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "transport_layerbody object",
+                        "schema": {
+                            "$ref": "#/definitions/TransportLayerType"
+                        },
+                        "name": "transport_layer",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Create transport_layer by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "createCallsCallTransportLayerTransportLayerById"
+            },
+            "delete": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Delete operation of resource: transport_layer",
+                "parameters": [
+                    {
+                        "description": "ID of callId",
+                        "required": true,
+                        "type": "string",
+                        "name": "callId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Delete transport_layer by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "deleteCallsCallTransportLayerTransportLayerById"
+            },
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/TransportLayerType"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: transport_layer",
+                "parameters": [
+                    {
+                        "description": "ID of callId",
+                        "required": true,
+                        "type": "string",
+                        "name": "callId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve transport_layer",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveCallsCallTransportLayerTransportLayer"
+            }
+        },
+        "/config/calls/call/{callId}/match/": {
+            "put": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Update operation of resource: match",
+                "parameters": [
+                    {
+                        "description": "ID of callId",
+                        "required": true,
+                        "type": "string",
+                        "name": "callId",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "matchbody object",
+                        "schema": {
+                            "$ref": "#/definitions/MatchRules"
+                        },
+                        "name": "match",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Update match by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "updateCallsCallMatchMatchById"
+            },
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Create operation of resource: match",
+                "parameters": [
+                    {
+                        "description": "ID of callId",
+                        "required": true,
+                        "type": "string",
+                        "name": "callId",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "matchbody object",
+                        "schema": {
+                            "$ref": "#/definitions/MatchRules"
+                        },
+                        "name": "match",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Create match by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "createCallsCallMatchMatchById"
+            },
+            "delete": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Delete operation of resource: match",
+                "parameters": [
+                    {
+                        "description": "ID of callId",
+                        "required": true,
+                        "type": "string",
+                        "name": "callId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Delete match by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "deleteCallsCallMatchMatchById"
+            },
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/MatchRules"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: match",
+                "parameters": [
+                    {
+                        "description": "ID of callId",
+                        "required": true,
+                        "type": "string",
+                        "name": "callId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve match",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveCallsCallMatchMatch"
+            }
+        },
+        "/config/calls/call/{callId}/match/include_path/": {
+            "put": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Update operation of resource: include_path",
+                "parameters": [
+                    {
+                        "description": "ID of callId",
+                        "required": true,
+                        "type": "string",
+                        "name": "callId",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "include_pathbody object",
+                        "schema": {
+                            "$ref": "#/definitions/PathType"
+                        },
+                        "name": "include_path",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Update include_path by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "updateCallsCallMatchIncludePathIncludePathById"
+            },
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Create operation of resource: include_path",
+                "parameters": [
+                    {
+                        "description": "ID of callId",
+                        "required": true,
+                        "type": "string",
+                        "name": "callId",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "include_pathbody object",
+                        "schema": {
+                            "$ref": "#/definitions/PathType"
+                        },
+                        "name": "include_path",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Create include_path by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "createCallsCallMatchIncludePathIncludePathById"
+            },
+            "delete": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Delete operation of resource: include_path",
+                "parameters": [
+                    {
+                        "description": "ID of callId",
+                        "required": true,
+                        "type": "string",
+                        "name": "callId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Delete include_path by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "deleteCallsCallMatchIncludePathIncludePathById"
+            },
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/PathType"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: include_path",
+                "parameters": [
+                    {
+                        "description": "ID of callId",
+                        "required": true,
+                        "type": "string",
+                        "name": "callId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve include_path",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveCallsCallMatchIncludePathIncludePath"
+            }
+        },
+        "/config/calls/call/{callId}/match/include_path/topo_components/": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "items": {
+                                "type": "string",
+                                "x-path": "/calls/call/{callId}/match/include_path/topo_components/{endpointId}/"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: topo_components",
+                "parameters": [
+                    {
+                        "description": "ID of callId",
+                        "required": true,
+                        "type": "string",
+                        "name": "callId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve topo_components",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveCallsCallMatchIncludePathTopoComponentsTopoComponents"
+            }
+        },
+        "/config/calls/call/{callId}/match/include_path/topo_components/{endpointId}/": {
+            "put": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Update operation of resource: topo_components",
+                "parameters": [
+                    {
+                        "description": "ID of callId",
+                        "required": true,
+                        "type": "string",
+                        "name": "callId",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of endpointId",
+                        "required": true,
+                        "type": "string",
+                        "name": "endpointId",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "topo_componentsbody object",
+                        "schema": {
+                            "$ref": "#/definitions/Endpoint"
+                        },
+                        "name": "topo_components",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Update topo_components by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "updateCallsCallMatchIncludePathTopoComponentsTopoComponentsById"
+            },
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Create operation of resource: topo_components",
+                "parameters": [
+                    {
+                        "description": "ID of callId",
+                        "required": true,
+                        "type": "string",
+                        "name": "callId",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of endpointId",
+                        "required": true,
+                        "type": "string",
+                        "name": "endpointId",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "topo_componentsbody object",
+                        "schema": {
+                            "$ref": "#/definitions/Endpoint"
+                        },
+                        "name": "topo_components",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Create topo_components by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "createCallsCallMatchIncludePathTopoComponentsTopoComponentsById"
+            },
+            "delete": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Delete operation of resource: topo_components",
+                "parameters": [
+                    {
+                        "description": "ID of callId",
+                        "required": true,
+                        "type": "string",
+                        "name": "callId",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of endpointId",
+                        "required": true,
+                        "type": "string",
+                        "name": "endpointId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Delete topo_components by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "deleteCallsCallMatchIncludePathTopoComponentsTopoComponentsById"
+            },
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Endpoint"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: topo_components",
+                "parameters": [
+                    {
+                        "description": "ID of callId",
+                        "required": true,
+                        "type": "string",
+                        "name": "callId",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of endpointId",
+                        "required": true,
+                        "type": "string",
+                        "name": "endpointId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve topo_components by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveCallsCallMatchIncludePathTopoComponentsTopoComponentsById"
+            }
+        },
+        "/config/calls/call/{callId}/match/include_path/label/": {
+            "put": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Update operation of resource: label",
+                "parameters": [
+                    {
+                        "description": "ID of callId",
+                        "required": true,
+                        "type": "string",
+                        "name": "callId",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "labelbody object",
+                        "schema": {
+                            "$ref": "#/definitions/Label"
+                        },
+                        "name": "label",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Update label by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "updateCallsCallMatchIncludePathLabelLabelById"
+            },
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Create operation of resource: label",
+                "parameters": [
+                    {
+                        "description": "ID of callId",
+                        "required": true,
+                        "type": "string",
+                        "name": "callId",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "labelbody object",
+                        "schema": {
+                            "$ref": "#/definitions/Label"
+                        },
+                        "name": "label",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Create label by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "createCallsCallMatchIncludePathLabelLabelById"
+            },
+            "delete": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Delete operation of resource: label",
+                "parameters": [
+                    {
+                        "description": "ID of callId",
+                        "required": true,
+                        "type": "string",
+                        "name": "callId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Delete label by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "deleteCallsCallMatchIncludePathLabelLabelById"
+            },
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Label"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: label",
+                "parameters": [
+                    {
+                        "description": "ID of callId",
+                        "required": true,
+                        "type": "string",
+                        "name": "callId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve label",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveCallsCallMatchIncludePathLabelLabel"
+            }
+        },
+        "/config/calls/call/{callId}/traffic_params/": {
+            "put": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Update operation of resource: traffic_params",
+                "parameters": [
+                    {
+                        "description": "ID of callId",
+                        "required": true,
+                        "type": "string",
+                        "name": "callId",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "traffic_paramsbody object",
+                        "schema": {
+                            "$ref": "#/definitions/TrafficParams"
+                        },
+                        "name": "traffic_params",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Update traffic_params by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "updateCallsCallTrafficParamsTrafficParamsById"
+            },
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Create operation of resource: traffic_params",
+                "parameters": [
+                    {
+                        "description": "ID of callId",
+                        "required": true,
+                        "type": "string",
+                        "name": "callId",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "traffic_paramsbody object",
+                        "schema": {
+                            "$ref": "#/definitions/TrafficParams"
+                        },
+                        "name": "traffic_params",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Create traffic_params by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "createCallsCallTrafficParamsTrafficParamsById"
+            },
+            "delete": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Delete operation of resource: traffic_params",
+                "parameters": [
+                    {
+                        "description": "ID of callId",
+                        "required": true,
+                        "type": "string",
+                        "name": "callId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Delete traffic_params by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "deleteCallsCallTrafficParamsTrafficParamsById"
+            },
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/TrafficParams"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: traffic_params",
+                "parameters": [
+                    {
+                        "description": "ID of callId",
+                        "required": true,
+                        "type": "string",
+                        "name": "callId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve traffic_params",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveCallsCallTrafficParamsTrafficParams"
+            }
+        },
+        "/config/calls/call/{callId}/connections/": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "items": {
+                                "type": "string",
+                                "x-path": "/calls/call/{callId}/connections/{connectionId}/"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: connections",
+                "parameters": [
+                    {
+                        "description": "ID of callId",
+                        "required": true,
+                        "type": "string",
+                        "name": "callId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve connections",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveCallsCallConnectionsConnections"
+            }
+        },
+        "/config/calls/call/{callId}/connections/{connectionId}/": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Connection"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: connections",
+                "parameters": [
+                    {
+                        "description": "ID of callId",
+                        "required": true,
+                        "type": "string",
+                        "name": "callId",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve connections by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveCallsCallConnectionsConnectionsById"
+            }
+        },
+        "/config/calls/call/{callId}/connections/{connectionId}/aEnd/": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Endpoint"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: aEnd",
+                "parameters": [
+                    {
+                        "description": "ID of callId",
+                        "required": true,
+                        "type": "string",
+                        "name": "callId",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve aEnd",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveCallsCallConnectionsAEndAEnd"
+            }
+        },
+        "/config/calls/call/{callId}/connections/{connectionId}/zEnd/": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Endpoint"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: zEnd",
+                "parameters": [
+                    {
+                        "description": "ID of callId",
+                        "required": true,
+                        "type": "string",
+                        "name": "callId",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve zEnd",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveCallsCallConnectionsZEndZEnd"
+            }
+        },
+        "/config/calls/call/{callId}/connections/{connectionId}/path/": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/PathType"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: path",
+                "parameters": [
+                    {
+                        "description": "ID of callId",
+                        "required": true,
+                        "type": "string",
+                        "name": "callId",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve path",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveCallsCallConnectionsPathPath"
+            }
+        },
+        "/config/calls/call/{callId}/connections/{connectionId}/path/topo_components/": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "items": {
+                                "type": "string",
+                                "x-path": "/calls/call/{callId}/connections/{connectionId}/path/topo_components/{endpointId}/"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: topo_components",
+                "parameters": [
+                    {
+                        "description": "ID of callId",
+                        "required": true,
+                        "type": "string",
+                        "name": "callId",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve topo_components",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveCallsCallConnectionsPathTopoComponentsTopoComponents"
+            }
+        },
+        "/config/calls/call/{callId}/connections/{connectionId}/path/topo_components/{endpointId}/": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Endpoint"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: topo_components",
+                "parameters": [
+                    {
+                        "description": "ID of callId",
+                        "required": true,
+                        "type": "string",
+                        "name": "callId",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of endpointId",
+                        "required": true,
+                        "type": "string",
+                        "name": "endpointId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve topo_components by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveCallsCallConnectionsPathTopoComponentsTopoComponentsById"
+            }
+        },
+        "/config/calls/call/{callId}/connections/{connectionId}/path/label/": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Label"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: label",
+                "parameters": [
+                    {
+                        "description": "ID of callId",
+                        "required": true,
+                        "type": "string",
+                        "name": "callId",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve label",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveCallsCallConnectionsPathLabelLabel"
+            }
+        },
+        "/config/calls/call/{callId}/connections/{connectionId}/match/": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/MatchRules"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: match",
+                "parameters": [
+                    {
+                        "description": "ID of callId",
+                        "required": true,
+                        "type": "string",
+                        "name": "callId",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve match",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveCallsCallConnectionsMatchMatch"
+            }
+        },
+        "/config/calls/call/{callId}/connections/{connectionId}/match/include_path/": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/PathType"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: include_path",
+                "parameters": [
+                    {
+                        "description": "ID of callId",
+                        "required": true,
+                        "type": "string",
+                        "name": "callId",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve include_path",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveCallsCallConnectionsMatchIncludePathIncludePath"
+            }
+        },
+        "/config/calls/call/{callId}/connections/{connectionId}/match/include_path/topo_components/": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "items": {
+                                "type": "string",
+                                "x-path": "/calls/call/{callId}/connections/{connectionId}/match/include_path/topo_components/{endpointId}/"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: topo_components",
+                "parameters": [
+                    {
+                        "description": "ID of callId",
+                        "required": true,
+                        "type": "string",
+                        "name": "callId",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve topo_components",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveCallsCallConnectionsMatchIncludePathTopoComponentsTopoComponents"
+            }
+        },
+        "/config/calls/call/{callId}/connections/{connectionId}/match/include_path/topo_components/{endpointId}/": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Endpoint"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: topo_components",
+                "parameters": [
+                    {
+                        "description": "ID of callId",
+                        "required": true,
+                        "type": "string",
+                        "name": "callId",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of endpointId",
+                        "required": true,
+                        "type": "string",
+                        "name": "endpointId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve topo_components by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveCallsCallConnectionsMatchIncludePathTopoComponentsTopoComponentsById"
+            }
+        },
+        "/config/calls/call/{callId}/connections/{connectionId}/match/include_path/label/": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Label"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: label",
+                "parameters": [
+                    {
+                        "description": "ID of callId",
+                        "required": true,
+                        "type": "string",
+                        "name": "callId",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve label",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveCallsCallConnectionsMatchIncludePathLabelLabel"
+            }
+        },
+        "/config/calls/call/{callId}/connections/{connectionId}/traffic_params/": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/TrafficParams"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: traffic_params",
+                "parameters": [
+                    {
+                        "description": "ID of callId",
+                        "required": true,
+                        "type": "string",
+                        "name": "callId",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve traffic_params",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveCallsCallConnectionsTrafficParamsTrafficParams"
+            }
+        },
+        "/config/calls/call/{callId}/connections/{connectionId}/transport_layer/": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/TransportLayerType"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: transport_layer",
+                "parameters": [
+                    {
+                        "description": "ID of callId",
+                        "required": true,
+                        "type": "string",
+                        "name": "callId",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve transport_layer",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveCallsCallConnectionsTransportLayerTransportLayer"
+            }
+        },
+        "/config/connections/": {
+            "put": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Update operation of resource: connections",
+                "parameters": [
+                    {
+                        "required": true,
+                        "description": "connectionsbody object",
+                        "schema": {
+                            "$ref": "#/definitions/ConnectionsSchema"
+                        },
+                        "name": "connections",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Update connections by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "updateConnectionsById"
+            },
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Create operation of resource: connections",
+                "parameters": [
+                    {
+                        "required": true,
+                        "description": "connectionsbody object",
+                        "schema": {
+                            "$ref": "#/definitions/ConnectionsSchema"
+                        },
+                        "name": "connections",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Create connections by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "createConnectionsById"
+            },
+            "delete": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "produces": [
+                    "application/json"
+                ],
+                "description": "Delete operation of resource: connections",
+                "summary": "Delete connections by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "deleteConnectionsById"
+            },
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/ConnectionsSchema"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: connections",
+                "parameters": [],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve connections",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveConnections"
+            }
+        },
+        "/config/connections/connection/": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "items": {
+                                "type": "string",
+                                "x-path": "/connections/connection/{connectionId}/"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: connection",
+                "parameters": [],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve connection",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveConnectionsConnectionConnection"
+            }
+        },
+        "/config/connections/connection/{connectionId}/": {
+            "put": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Update operation of resource: connection",
+                "parameters": [
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "connectionbody object",
+                        "schema": {
+                            "$ref": "#/definitions/Connection"
+                        },
+                        "name": "connection",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Update connection by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "updateConnectionsConnectionConnectionById"
+            },
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Create operation of resource: connection",
+                "parameters": [
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "connectionbody object",
+                        "schema": {
+                            "$ref": "#/definitions/Connection"
+                        },
+                        "name": "connection",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Create connection by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "createConnectionsConnectionConnectionById"
+            },
+            "delete": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Delete operation of resource: connection",
+                "parameters": [
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Delete connection by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "deleteConnectionsConnectionConnectionById"
+            },
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Connection"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: connection",
+                "parameters": [
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve connection by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveConnectionsConnectionConnectionById"
+            }
+        },
+        "/config/connections/connection/{connectionId}/aEnd/": {
+            "put": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Update operation of resource: aEnd",
+                "parameters": [
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "aEndbody object",
+                        "schema": {
+                            "$ref": "#/definitions/Endpoint"
+                        },
+                        "name": "aEnd",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Update aEnd by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "updateConnectionsConnectionAEndAEndById"
+            },
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Create operation of resource: aEnd",
+                "parameters": [
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "aEndbody object",
+                        "schema": {
+                            "$ref": "#/definitions/Endpoint"
+                        },
+                        "name": "aEnd",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Create aEnd by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "createConnectionsConnectionAEndAEndById"
+            },
+            "delete": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Delete operation of resource: aEnd",
+                "parameters": [
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Delete aEnd by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "deleteConnectionsConnectionAEndAEndById"
+            },
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Endpoint"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: aEnd",
+                "parameters": [
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve aEnd",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveConnectionsConnectionAEndAEnd"
+            }
+        },
+        "/config/connections/connection/{connectionId}/zEnd/": {
+            "put": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Update operation of resource: zEnd",
+                "parameters": [
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "zEndbody object",
+                        "schema": {
+                            "$ref": "#/definitions/Endpoint"
+                        },
+                        "name": "zEnd",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Update zEnd by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "updateConnectionsConnectionZEndZEndById"
+            },
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Create operation of resource: zEnd",
+                "parameters": [
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "zEndbody object",
+                        "schema": {
+                            "$ref": "#/definitions/Endpoint"
+                        },
+                        "name": "zEnd",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Create zEnd by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "createConnectionsConnectionZEndZEndById"
+            },
+            "delete": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Delete operation of resource: zEnd",
+                "parameters": [
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Delete zEnd by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "deleteConnectionsConnectionZEndZEndById"
+            },
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Endpoint"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: zEnd",
+                "parameters": [
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve zEnd",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveConnectionsConnectionZEndZEnd"
+            }
+        },
+        "/config/connections/connection/{connectionId}/path/": {
+            "put": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Update operation of resource: path",
+                "parameters": [
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "pathbody object",
+                        "schema": {
+                            "$ref": "#/definitions/PathType"
+                        },
+                        "name": "path",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Update path by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "updateConnectionsConnectionPathPathById"
+            },
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Create operation of resource: path",
+                "parameters": [
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "pathbody object",
+                        "schema": {
+                            "$ref": "#/definitions/PathType"
+                        },
+                        "name": "path",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Create path by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "createConnectionsConnectionPathPathById"
+            },
+            "delete": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Delete operation of resource: path",
+                "parameters": [
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Delete path by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "deleteConnectionsConnectionPathPathById"
+            },
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/PathType"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: path",
+                "parameters": [
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve path",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveConnectionsConnectionPathPath"
+            }
+        },
+        "/config/connections/connection/{connectionId}/path/topo_components/": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "items": {
+                                "type": "string",
+                                "x-path": "/connections/connection/{connectionId}/path/topo_components/{endpointId}/"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: topo_components",
+                "parameters": [
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve topo_components",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveConnectionsConnectionPathTopoComponentsTopoComponents"
+            }
+        },
+        "/config/connections/connection/{connectionId}/path/topo_components/{endpointId}/": {
+            "put": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Update operation of resource: topo_components",
+                "parameters": [
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of endpointId",
+                        "required": true,
+                        "type": "string",
+                        "name": "endpointId",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "topo_componentsbody object",
+                        "schema": {
+                            "$ref": "#/definitions/Endpoint"
+                        },
+                        "name": "topo_components",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Update topo_components by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "updateConnectionsConnectionPathTopoComponentsTopoComponentsById"
+            },
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Create operation of resource: topo_components",
+                "parameters": [
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of endpointId",
+                        "required": true,
+                        "type": "string",
+                        "name": "endpointId",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "topo_componentsbody object",
+                        "schema": {
+                            "$ref": "#/definitions/Endpoint"
+                        },
+                        "name": "topo_components",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Create topo_components by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "createConnectionsConnectionPathTopoComponentsTopoComponentsById"
+            },
+            "delete": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Delete operation of resource: topo_components",
+                "parameters": [
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of endpointId",
+                        "required": true,
+                        "type": "string",
+                        "name": "endpointId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Delete topo_components by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "deleteConnectionsConnectionPathTopoComponentsTopoComponentsById"
+            },
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Endpoint"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: topo_components",
+                "parameters": [
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of endpointId",
+                        "required": true,
+                        "type": "string",
+                        "name": "endpointId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve topo_components by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveConnectionsConnectionPathTopoComponentsTopoComponentsById"
+            }
+        },
+        "/config/connections/connection/{connectionId}/path/label/": {
+            "put": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Update operation of resource: label",
+                "parameters": [
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "labelbody object",
+                        "schema": {
+                            "$ref": "#/definitions/Label"
+                        },
+                        "name": "label",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Update label by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "updateConnectionsConnectionPathLabelLabelById"
+            },
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Create operation of resource: label",
+                "parameters": [
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "labelbody object",
+                        "schema": {
+                            "$ref": "#/definitions/Label"
+                        },
+                        "name": "label",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Create label by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "createConnectionsConnectionPathLabelLabelById"
+            },
+            "delete": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Delete operation of resource: label",
+                "parameters": [
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Delete label by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "deleteConnectionsConnectionPathLabelLabelById"
+            },
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Label"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: label",
+                "parameters": [
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve label",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveConnectionsConnectionPathLabelLabel"
+            }
+        },
+        "/config/connections/connection/{connectionId}/match/": {
+            "put": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Update operation of resource: match",
+                "parameters": [
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "matchbody object",
+                        "schema": {
+                            "$ref": "#/definitions/MatchRules"
+                        },
+                        "name": "match",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Update match by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "updateConnectionsConnectionMatchMatchById"
+            },
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Create operation of resource: match",
+                "parameters": [
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "matchbody object",
+                        "schema": {
+                            "$ref": "#/definitions/MatchRules"
+                        },
+                        "name": "match",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Create match by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "createConnectionsConnectionMatchMatchById"
+            },
+            "delete": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Delete operation of resource: match",
+                "parameters": [
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Delete match by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "deleteConnectionsConnectionMatchMatchById"
+            },
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/MatchRules"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: match",
+                "parameters": [
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve match",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveConnectionsConnectionMatchMatch"
+            }
+        },
+        "/config/connections/connection/{connectionId}/match/include_path/": {
+            "put": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Update operation of resource: include_path",
+                "parameters": [
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "include_pathbody object",
+                        "schema": {
+                            "$ref": "#/definitions/PathType"
+                        },
+                        "name": "include_path",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Update include_path by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "updateConnectionsConnectionMatchIncludePathIncludePathById"
+            },
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Create operation of resource: include_path",
+                "parameters": [
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "include_pathbody object",
+                        "schema": {
+                            "$ref": "#/definitions/PathType"
+                        },
+                        "name": "include_path",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Create include_path by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "createConnectionsConnectionMatchIncludePathIncludePathById"
+            },
+            "delete": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Delete operation of resource: include_path",
+                "parameters": [
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Delete include_path by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "deleteConnectionsConnectionMatchIncludePathIncludePathById"
+            },
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/PathType"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: include_path",
+                "parameters": [
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve include_path",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveConnectionsConnectionMatchIncludePathIncludePath"
+            }
+        },
+        "/config/connections/connection/{connectionId}/match/include_path/topo_components/": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "items": {
+                                "type": "string",
+                                "x-path": "/connections/connection/{connectionId}/match/include_path/topo_components/{endpointId}/"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: topo_components",
+                "parameters": [
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve topo_components",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveConnectionsConnectionMatchIncludePathTopoComponentsTopoComponents"
+            }
+        },
+        "/config/connections/connection/{connectionId}/match/include_path/topo_components/{endpointId}/": {
+            "put": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Update operation of resource: topo_components",
+                "parameters": [
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of endpointId",
+                        "required": true,
+                        "type": "string",
+                        "name": "endpointId",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "topo_componentsbody object",
+                        "schema": {
+                            "$ref": "#/definitions/Endpoint"
+                        },
+                        "name": "topo_components",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Update topo_components by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "updateConnectionsConnectionMatchIncludePathTopoComponentsTopoComponentsById"
+            },
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Create operation of resource: topo_components",
+                "parameters": [
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of endpointId",
+                        "required": true,
+                        "type": "string",
+                        "name": "endpointId",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "topo_componentsbody object",
+                        "schema": {
+                            "$ref": "#/definitions/Endpoint"
+                        },
+                        "name": "topo_components",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Create topo_components by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "createConnectionsConnectionMatchIncludePathTopoComponentsTopoComponentsById"
+            },
+            "delete": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Delete operation of resource: topo_components",
+                "parameters": [
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of endpointId",
+                        "required": true,
+                        "type": "string",
+                        "name": "endpointId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Delete topo_components by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "deleteConnectionsConnectionMatchIncludePathTopoComponentsTopoComponentsById"
+            },
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Endpoint"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: topo_components",
+                "parameters": [
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of endpointId",
+                        "required": true,
+                        "type": "string",
+                        "name": "endpointId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve topo_components by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveConnectionsConnectionMatchIncludePathTopoComponentsTopoComponentsById"
+            }
+        },
+        "/config/connections/connection/{connectionId}/match/include_path/label/": {
+            "put": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Update operation of resource: label",
+                "parameters": [
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "labelbody object",
+                        "schema": {
+                            "$ref": "#/definitions/Label"
+                        },
+                        "name": "label",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Update label by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "updateConnectionsConnectionMatchIncludePathLabelLabelById"
+            },
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Create operation of resource: label",
+                "parameters": [
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "labelbody object",
+                        "schema": {
+                            "$ref": "#/definitions/Label"
+                        },
+                        "name": "label",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Create label by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "createConnectionsConnectionMatchIncludePathLabelLabelById"
+            },
+            "delete": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Delete operation of resource: label",
+                "parameters": [
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Delete label by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "deleteConnectionsConnectionMatchIncludePathLabelLabelById"
+            },
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Label"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: label",
+                "parameters": [
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve label",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveConnectionsConnectionMatchIncludePathLabelLabel"
+            }
+        },
+        "/config/connections/connection/{connectionId}/traffic_params/": {
+            "put": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Update operation of resource: traffic_params",
+                "parameters": [
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "traffic_paramsbody object",
+                        "schema": {
+                            "$ref": "#/definitions/TrafficParams"
+                        },
+                        "name": "traffic_params",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Update traffic_params by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "updateConnectionsConnectionTrafficParamsTrafficParamsById"
+            },
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Create operation of resource: traffic_params",
+                "parameters": [
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "traffic_paramsbody object",
+                        "schema": {
+                            "$ref": "#/definitions/TrafficParams"
+                        },
+                        "name": "traffic_params",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Create traffic_params by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "createConnectionsConnectionTrafficParamsTrafficParamsById"
+            },
+            "delete": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Delete operation of resource: traffic_params",
+                "parameters": [
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Delete traffic_params by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "deleteConnectionsConnectionTrafficParamsTrafficParamsById"
+            },
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/TrafficParams"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: traffic_params",
+                "parameters": [
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve traffic_params",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveConnectionsConnectionTrafficParamsTrafficParams"
+            }
+        },
+        "/config/connections/connection/{connectionId}/transport_layer/": {
+            "put": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Update operation of resource: transport_layer",
+                "parameters": [
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "transport_layerbody object",
+                        "schema": {
+                            "$ref": "#/definitions/TransportLayerType"
+                        },
+                        "name": "transport_layer",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Update transport_layer by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "updateConnectionsConnectionTransportLayerTransportLayerById"
+            },
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Create operation of resource: transport_layer",
+                "parameters": [
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "transport_layerbody object",
+                        "schema": {
+                            "$ref": "#/definitions/TransportLayerType"
+                        },
+                        "name": "transport_layer",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Create transport_layer by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "createConnectionsConnectionTransportLayerTransportLayerById"
+            },
+            "delete": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Delete operation of resource: transport_layer",
+                "parameters": [
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Delete transport_layer by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "deleteConnectionsConnectionTransportLayerTransportLayerById"
+            },
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/TransportLayerType"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: transport_layer",
+                "parameters": [
+                    {
+                        "description": "ID of connectionId",
+                        "required": true,
+                        "type": "string",
+                        "name": "connectionId",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve transport_layer",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveConnectionsConnectionTransportLayerTransportLayer"
+            }
+        }
+    },
+    "definitions": {
+        "Endpoint": {
+            "description": "The End-Point represents the access to the forwarding (as Connection-End-Point) and/or adjacency (as Link-End-Point) function",
+            "properties": {
+                "routerId": {
+                    "type": "string"
+                },
+                "edgeEndId": {
+                    "type": "string"
+                },
+                "endpointId": {
+                    "type": "string",
+                    "description": "Name of the endpoint, for example host1-port1"
+                }
+            }
+        },
+        "TransportLayerType": {
+            "description": "",
+            "properties": {
+                "action": {
+                    "enum": [
+                        "forward",
+                        "push_tag",
+                        "pop_tag"
+                    ],
+                    "type": "string"
+                },
+                "layer": {
+                    "enum": [
+                        "dwdm_link",
+                        "ethernet",
+                        "ethernet_broadcast",
+                        "mpls"
+                    ],
+                    "type": "string"
+                },
+                "direction": {
+                    "enum": [
+                        "unidir",
+                        "bidir"
+                    ],
+                    "type": "string"
+                },
+                "layerId": {
+                    "type": "string"
+                }
+            }
+        },
+        "Connection": {
+            "description": "The Connection represents an enabled potential for forwarding (including all circuit and packet forms) between two or more endpoints",
+            "properties": {
+                "controllerDomainId": {
+                    "type": "string"
+                },
+                "trafficParams": {
+                    "$ref": "#/definitions/TrafficParams"
+                },
+                "connectionId": {
+                    "type": "string"
+                },
+                "zEnd": {
+                    "$ref": "#/definitions/Endpoint"
+                },
+                "operStatus": {
+                    "enum": [
+                        "down",
+                        "up"
+                    ],
+                    "type": "string",
+                    "description": "Running status"
+                },
+                "aEnd": {
+                    "$ref": "#/definitions/Endpoint"
+                },
+                "path": {
+                    "$ref": "#/definitions/PathType"
+                },
+                "transportLayer": {
+                    "$ref": "#/definitions/TransportLayerType"
+                },
+                "match": {
+                    "$ref": "#/definitions/MatchRules"
+                }
+            }
+        },
+        "TrafficParams": {
+            "description": "Basic Traffic Parameters to be offered within a Call",
+            "properties": {
+                "latency": {
+                    "type": "integer",
+                    "description": "Connection latency measured in ms",
+                    "format": "int32"
+                },
+                "OSNR": {
+                    "type": "number",
+                    "description": "Optical Signal-to-noise ratio",
+                    "format": "double"
+                },
+                "estimatedPLR": {
+                    "type": "number",
+                    "description": "Estimated packet loss ratio in %",
+                    "format": "double"
+                },
+                "qosClass": {
+                    "enum": [
+                        "gold",
+                        "silver"
+                    ],
+                    "type": "string"
+                },
+                "reservedBandwidth": {
+                    "type": "integer",
+                    "description": "Reserved Bandwidth measured in Mb/s i.e. 10, 100, 1000 Mb/s",
+                    "format": "int32"
+                }
+            }
+        },
+        "Label": {
+            "description": "",
+            "properties": {
+                "labelType": {
+                    "enum": [
+                        "GMPLS_FIXED",
+                        "GMPLS_FLEXI"
+                    ],
+                    "type": "string"
+                },
+                "labelValue": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            }
+        },
+        "MatchRules": {
+            "description": "Match rules for call - OF match rules + extentions",
+            "properties": {
+                "mplsLabel": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "ethType": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "ipEcn": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "icmpv4Type": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "ethDst": {
+                    "type": "string"
+                },
+                "vlanPcp": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "ipv4Dst": {
+                    "type": "string"
+                },
+                "arpTpa": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "arpSha": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "ipv6Exthdr": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "includePath": {
+                    "$ref": "#/definitions/PathType"
+                },
+                "icmpv6Type": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "ipv6Src": {
+                    "type": "string"
+                },
+                "mplsTc": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "tunnelId": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "sctpDst": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "ethSrc": {
+                    "type": "string"
+                },
+                "ipv6NdTarget": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "tcpSrc": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "ipv4Src": {
+                    "type": "string"
+                },
+                "icmpv6Code": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "mplsBos": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "experimentalTeid": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "ipv6NdTll": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "sctpSrc": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "udpDst": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "pbbIsid": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "ipv6Flabel": {
+                    "type": "string"
+                },
+                "inPort": {
+                    "type": "string"
+                },
+                "icmpv4Code": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "ipDscp": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "inPhyPort": {
+                    "type": "string"
+                },
+                "ipProto": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "arpTha": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "arpSpa": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "ipv6Dst": {
+                    "type": "string"
+                },
+                "udpSrc": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "arpOp": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "ipv6NdSll": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "vlanVid": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "experimentalGmplsWsonLabel": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "metadata": {
+                    "type": "string"
+                },
+                "tcpDst": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            }
+        },
+        "PathType": {
+            "description": "The Path represents the individual routes of a Connection.",
+            "properties": {
+                "multiLayer": {
+                    "type": "boolean"
+                },
+                "noPath": {
+                    "type": "boolean"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "topoComponents": {
+                    "items": {
+                        "$ref": "#/definitions/Endpoint"
+                    },
+                    "type": "array",
+                    "x-key": "endpointId"
+                },
+                "label": {
+                    "$ref": "#/definitions/Label"
+                }
+            }
+        },
+        "Call": {
+            "description": "A call represents an \u201cintent-request\u201d for connectivity within a Forwarding-Domain between the endpoints. Call is distinct from the Connection that realizes the Call.",
+            "properties": {
+                "operStatus": {
+                    "enum": [
+                        "down",
+                        "up"
+                    ],
+                    "type": "string",
+                    "description": "Running status"
+                },
+                "callId": {
+                    "type": "string"
+                },
+                "zEnd": {
+                    "$ref": "#/definitions/Endpoint"
+                },
+                "connections": {
+                    "items": {
+                        "$ref": "#/definitions/Connection"
+                    },
+                    "type": "array",
+                    "x-key": "connectionId"
+                },
+                "trafficParams": {
+                    "$ref": "#/definitions/TrafficParams"
+                },
+                "aEnd": {
+                    "$ref": "#/definitions/Endpoint"
+                },
+                "transportLayer": {
+                    "$ref": "#/definitions/TransportLayerType"
+                },
+                "match": {
+                    "$ref": "#/definitions/MatchRules"
+                }
+            }
+        },
+        "CallsSchema": {
+            "properties": {
+                "call": {
+                    "items": {
+                        "$ref": "#/definitions/Call"
+                    },
+                    "type": "array",
+                    "x-key": "callId"
+                }
+            }
+        },
+        "ConnectionsSchema": {
+            "properties": {
+                "connection": {
+                    "items": {
+                        "$ref": "#/definitions/Connection"
+                    },
+                    "type": "array",
+                    "x-key": "connectionId"
+                }
+            }
+        }
+    }
+}

@@ -71,10 +71,6 @@ module service-topology {
             key "edge_id";
             uses edge;
         }
-        container topology_types{
-            description "Empty container used to be augmented with one or more empty optional
-                    container to indicate the topology type(s)";
-        }
     }
 
     grouping edge_end{
@@ -105,10 +101,6 @@ module service-topology {
         }
         leaf domain{
             type string;
-        }
-        container node_type{
-            description "Empty container used to be augmented with  a new empty optional
-                    container to indicate the new Node Type";
         }
         list edge_end{
             key "edge_end_id";
@@ -218,4 +210,7 @@ module service-topology {
         }
     }
 
+    notification update_topology{
+        uses topology;
+    }
 }
