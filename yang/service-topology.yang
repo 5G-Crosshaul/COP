@@ -40,6 +40,35 @@ module service-topology {
         }
     }
 
+    typedef node_type_enumeration {
+        type enumeration {
+            enum OF {
+                value 0;
+                description "OpenFlow node";
+            }        
+            enum GMPLS {
+                value 1;
+                description "GMPLS node";
+            }
+            enum OF-W {
+                value 2;
+                description "OpenFlow wireless node";
+            }
+            enum ABSTRACT {
+                value 3;
+                description "Abstract node";
+            }
+            enum OF-IOT {
+                value 4;
+                description "IoT node";
+            }
+            enum HOST {
+                value 5;
+                description "Host node";
+            }
+        }
+    }
+
     typedef switching_cap_enumeration {
         type enumeration {
             enum lsc {
@@ -106,6 +135,9 @@ module service-topology {
             key "edge_end_id";
             uses edge_end;
         }
+        leaf nodetype {
+            type node_type_enumeration;
+        }
     }
 
     grouping edge{
@@ -136,17 +168,25 @@ module service-topology {
         leaf latency{
             type string;
         }
-        container source{
-            uses node;
+        leaf source{
+            type leafref {
+              path '/topologies/topology/nodes/node_id';
+            }
         }
-        container target{
-            uses node;
+        leaf target{
+            type leafref {
+              path '/topologies/topology/nodes/node_id';
+            }
         }
-        container local_ifid{
-            uses edge_end;
+        leaf local_ifid{
+            type leafref {
+              path '/topologies/topology/nodes/edge_end/edge_end_id';
+            }
         }
-        container remote_ifid{
-            uses edge_end;
+        leaf remote_ifid{
+            type leafref {
+              path '/topologies/topology/nodes/edge_end/edge_end_id';
+            }
         }
     }
 
