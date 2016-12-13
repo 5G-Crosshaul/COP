@@ -1,6 +1,4 @@
 from objects_common.jsonObject import JsonObject
-from node import Node
-from edgeEnd import EdgeEnd
 from objects_common.enumType import EnumType
 
 class Edge(JsonObject):
@@ -13,11 +11,11 @@ class Edge(JsonObject):
         self.switchingCap=""
         self.metric=""
         self.maxResvBw=""
-        self.source=Node() #import
-        self.localIfid=EdgeEnd() #import
-        self.remoteIfid=EdgeEnd() #import
+        self.source=""
+        self.localIfid=""
+        self.remoteIfid=""
         self.unreservBw=""
-        self.target=Node() #import
+        self.target=""
         super(Edge, self).__init__(json_struct)
 
 class Edgetype(EnumType):
