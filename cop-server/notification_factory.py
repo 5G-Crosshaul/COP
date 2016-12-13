@@ -4,7 +4,8 @@ from autobahn.twisted.websocket import WebSocketServerFactory, WebSocketServerPr
 import time
 import thread
 
-from funcs_service_topology.update_TopologyImpl import Update_TopologyImpl
+from funcs_service_call.update_CallImpl import Update_CallImpl
+from funcs_service_call.remove_CallImpl import Remove_CallImpl
 class BaseService:
 
     def __init__(self, proto):
@@ -21,10 +22,26 @@ class BaseService:
         pass
 
 
-class UpdateTopologyService(BaseService):
+class UpdateCallService(BaseService):
 
     def onOpen(self):
-        backend = Update_TopologyImpl(self.proto)
+        backend = Update_CallImpl(self.proto)
+        backend.start()
+        thread.start_new_thread(self.onAsyncronousEvent,(backend, 5))
+
+    def onMessage(self, payload, isBinary):
+        pass
+
+
+    def onAsyncronousEvent(self, backend, timer):
+        time.sleep(timer)
+        backend.set_event(False)
+
+
+class RemoveCallService(BaseService):
+
+    def onOpen(self):
+        backend = Remove_CallImpl(self.proto)
         backend.start()
         thread.start_new_thread(self.onAsyncronousEvent,(backend, 5))
 
@@ -39,7 +56,7 @@ class UpdateTopologyService(BaseService):
 
 class ServiceServerProtocol(WebSocketServerProtocol):
 
-    SERVICEMAP = { '/restconf/streams/updateTopologyService' : UpdateTopologyService }
+    SERVICEMAP = { '/restconf/streams/updateCallService' : UpdateCallService, '/restconf/streams/removeCallService' : RemoveCallService }
 
     def __init__(self):
         super(ServiceServerProtocol, self).__init__()

@@ -3985,10 +3985,10 @@
         "Endpoint": {
             "description": "The End-Point represents the access to the forwarding (as Connection-End-Point) and/or adjacency (as Link-End-Point) function",
             "properties": {
-                "routerId": {
+                "edgeEndId": {
                     "type": "string"
                 },
-                "edgeEndId": {
+                "nodeId": {
                     "type": "string"
                 },
                 "endpointId": {

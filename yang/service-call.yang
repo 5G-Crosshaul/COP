@@ -309,7 +309,7 @@ module service-call {
             type string;
             description "Name of the endpoint, for example host1-port1";
         }
-        leaf router_id{
+        leaf node_id{
             type string;
         }
         leaf edge_end_id{

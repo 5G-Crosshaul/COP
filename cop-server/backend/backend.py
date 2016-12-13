@@ -2,6 +2,8 @@
 import json
 
 from objects_common.keyedArrayType import KeyedArrayType
+from objects_service_call.callsSchema import CallsSchema as CallsSchema_object
+from objects_service_call.connectionsSchema import ConnectionsSchema as ConnectionsSchema_object
 from objects_service_topology.topologiesSchema import TopologiesSchema as TopologiesSchema_object
 
 """
@@ -30,10 +32,14 @@ def byteify(input):
 
 filename = 'server_backend_state.json'
 
+calls = CallsSchema_object()
+connections = ConnectionsSchema_object()
 topologies = TopologiesSchema_object()
 
 def save_state():
     json_struct = {}
+    json_struct['calls'] = calls.json_serializer()
+    json_struct['connections'] = connections.json_serializer()
     json_struct['topologies'] = topologies.json_serializer()
 
     json_string = json_dumps(json_struct)
@@ -47,6 +53,10 @@ def load_state():
     json_string = f.read()
     f.close()
     json_struct = byteify(json.loads(json_string))
+    global calls
+    calls = CallsSchema_object(json_struct['calls'])
+    global connections
+    connections = ConnectionsSchema_object(json_struct['connections'])
     global topologies
     topologies = TopologiesSchema_object(json_struct['topologies'])
     return True
