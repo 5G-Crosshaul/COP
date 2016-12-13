@@ -12,9 +12,9 @@ The COP is defined using YANG models and RESTCONF. We provide the [YANG models](
 
 The [COP YANG models](COP/tree/master/yang) are available for discussion to research community. Up to now three YANG models have been discussed:
 
-- [service-call.yang](yang/yang-cop/service-call.yang)
-- [service-topology.yang](yang/yang-cop/service-topology.yang)
-- [service-path-computation.yang](yang/yang-cop/service-path-computation.yang)
+- [service-call.yang](yang/service-call.yang)
+- [service-topology.yang](yang/service-topology.yang)
+- [service-path-computation.yang](yang/service-path-computation.yang)
 
 
 License
