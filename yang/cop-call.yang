@@ -4,7 +4,12 @@ module cop-call {
 
     namespace "urn:ietf:params:xml:ns:yang:cop-call";
 
-    prefix s-call;
+    prefix cop-call;
+    
+    import cop-topology {
+      prefix cop-topology;
+    }
+    
     organization "CTTC";
 
     description  "YANG version of the Common Orchestration Protocol (COP).";
@@ -13,6 +18,8 @@ module cop-call {
         description
         "Service call module for 5G-Crosshaul";
     }
+
+
 
     typedef qos_class_enumeration {
     	type enumeration {
@@ -294,13 +301,15 @@ module cop-call {
         }
         leaf node_id{
             mandatory true;
+            config false;
             type leafref {
-              path '/topologies/topology/nodes/node_id';
+              path '/cop-topology:topologies/cop-topology:topology/cop-topology:nodes/cop-topology:node_id';
             }
         }
         leaf edge_end_id{
+            config false;
             type leafref {
-              path '/topologies/topology/nodes/edge_end/edge_end_id';
+              path '/cop-topology:topologies/cop-topology:topology/cop-topology:nodes/cop-topology:edge_end/cop-topology:edge_end_id';
             }
         }
     }

@@ -4,8 +4,8 @@ from autobahn.twisted.websocket import WebSocketServerFactory, WebSocketServerPr
 import time
 import thread
 
-from funcs_service_call.update_CallImpl import Update_CallImpl
-from funcs_service_call.remove_CallImpl import Remove_CallImpl
+from funcs_cop_call.update_CallImpl import Update_CallImpl
+from funcs_cop_call.remove_CallImpl import Remove_CallImpl
 class BaseService:
 
     def __init__(self, proto):

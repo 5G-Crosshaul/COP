@@ -4,7 +4,7 @@ import json
 import time
 sys.path.append(os.path.join(os.path.dirname(os.path.realpath(__file__))))
 
-from objects_service_call.call import Call
+from objects_cop_call.call import Call
 
 
 class Update_CallImpl (threading.Thread):

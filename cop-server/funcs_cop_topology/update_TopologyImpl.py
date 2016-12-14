@@ -4,10 +4,10 @@ import json
 import time
 sys.path.append(os.path.join(os.path.dirname(os.path.realpath(__file__))))
 
-from objects_service_call.call import Call
+from objects_cop_topology.topology import Topology
 
 
-class Remove_CallImpl (threading.Thread):
+class Update_TopologyImpl (threading.Thread):
     def __init__(self, handler):
         threading.Thread.__init__(self)
         self.event = True
@@ -21,5 +21,5 @@ class Remove_CallImpl (threading.Thread):
         while self.event:
             time.sleep(1)
 
-        payload = json.dumps(Call({"callId":"Example_Remove_Call"}).json_serializer()).encode('utf8')
+        payload = json.dumps(Topology({"callId":"Example_Update_Topology"}).json_serializer()).encode('utf8')
         self.handler.sendMessage(payload, False)

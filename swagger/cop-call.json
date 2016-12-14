@@ -2,8 +2,8 @@
     "swagger": "2.0",
     "info": {
         "version": "1.0.0",
-        "description": "service-call API generated from service-call.yang",
-        "title": "service-call API"
+        "description": "cop-call API generated from cop-call.yang",
+        "title": "cop-call API"
     },
     "host": "localhost:8080",
     "basePath": "/restconf",
@@ -3986,10 +3986,12 @@
             "description": "The End-Point represents the access to the forwarding (as Connection-End-Point) and/or adjacency (as Link-End-Point) function",
             "properties": {
                 "edgeEndId": {
-                    "type": "string"
+                    "type": "string",
+                    "x-path": "/cop-topology:topologies/cop-topology:topology/cop-topology:nodes/cop-topology:edge_end/cop-topology:edge_end_id"
                 },
                 "nodeId": {
-                    "type": "string"
+                    "type": "string",
+                    "x-path": "/cop-topology:topologies/cop-topology:topology/cop-topology:nodes/cop-topology:node_id"
                 },
                 "endpointId": {
                     "type": "string",

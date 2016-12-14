@@ -4,7 +4,7 @@ module cop-topology {
 
     namespace "urn:ietf:params:xml:ns:yang:cop-topology";
 
-    prefix s-topology;
+    prefix cop-topology;
 
     organization "CTTC";
 

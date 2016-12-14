@@ -2,8 +2,8 @@
     "swagger": "2.0",
     "info": {
         "version": "1.0.0",
-        "description": "service-topology API generated from service-topology.yang",
-        "title": "service-topology API"
+        "description": "cop-topology API generated from cop-topology.yang",
+        "title": "cop-topology API"
     },
     "host": "localhost:8080",
     "basePath": "/restconf",
@@ -461,6 +461,15 @@
                     "x-key": "edgeEndId"
                 },
                 "nodeId": {
+                    "type": "string"
+                },
+                "nodeIdType": {
+                    "enum": [
+                        "IPv4",
+                        "IPv6",
+                        "DatapathID",
+                        "MAC"
+                    ],
                     "type": "string"
                 },
                 "underlayAbstractTopology": {

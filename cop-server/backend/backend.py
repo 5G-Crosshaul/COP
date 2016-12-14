@@ -2,9 +2,9 @@
 import json
 
 from objects_common.keyedArrayType import KeyedArrayType
-from objects_service_call.callsSchema import CallsSchema as CallsSchema_object
-from objects_service_call.connectionsSchema import ConnectionsSchema as ConnectionsSchema_object
-from objects_service_topology.topologiesSchema import TopologiesSchema as TopologiesSchema_object
+from objects_cop_call.callsSchema import CallsSchema as CallsSchema_object
+from objects_cop_call.connectionsSchema import ConnectionsSchema as ConnectionsSchema_object
+from objects_cop_topology.topologiesSchema import TopologiesSchema as TopologiesSchema_object
 
 """
 class TopLevelObject(jsonObject):
