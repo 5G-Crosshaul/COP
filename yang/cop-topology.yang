@@ -1,8 +1,8 @@
-module service-topology {
+module cop-topology {
 
     yang-version 1;
 
-    namespace "urn:ietf:params:xml:ns:yang:service-topology";
+    namespace "urn:ietf:params:xml:ns:yang:cop-topology";
 
     prefix s-topology;
 
@@ -82,6 +82,26 @@ module service-topology {
         }
     }
 
+    typedef node_id_type_enumeration{
+        type enumeration{
+            enum IPv4 {
+                value 0;
+                description "xxx.yyy.zzz.www";
+            }
+            enum IPv6 {
+                value 1;
+            }
+            enum DatapathID {
+                value 2;
+                description "AA:BB:CC:DD:EE:FF:00:01";
+            }
+            enum MAC {
+                value 3;
+                description "AA:BB:CC:DD:EE:FF";
+            }
+        }
+    }
+
     grouping topology{
         leaf topology_id{
             type string;
@@ -120,6 +140,9 @@ module service-topology {
     grouping node{
         leaf node_id{
             type string;
+        }
+        leaf node_id_type{
+            type node_id_type_enumeration;
         }
         leaf-list underlay-abstract-topology{
             description "List of topology_ids which are represented by this node.";

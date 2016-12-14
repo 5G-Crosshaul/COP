@@ -1,8 +1,8 @@
-module service-call {
+module cop-call {
 
     yang-version 1;
 
-    namespace "urn:ietf:params:xml:ns:yang:service-call";
+    namespace "urn:ietf:params:xml:ns:yang:cop-call";
 
     prefix s-call;
     organization "CTTC";
@@ -85,23 +85,6 @@ module service-call {
             enum UDP;
             enum ARP;
             enum DHCP;
-        }
-    }
-
-    typedef address-type{
-        type enumeration{
-            enum IPv4 {
-                value 0;
-            }
-            enum IPv6 {
-                value 1;
-            }
-            enum DatapathID {
-                value 2;
-            }
-            enum MAC {
-                value 3;
-            }
         }
     }
 
@@ -310,10 +293,15 @@ module service-call {
             description "Name of the endpoint, for example host1-port1";
         }
         leaf node_id{
-            type string;
+            mandatory true;
+            type leafref {
+              path '/topologies/topology/nodes/node_id';
+            }
         }
         leaf edge_end_id{
-            type string;
+            type leafref {
+              path '/topologies/topology/nodes/edge_end/edge_end_id';
+            }
         }
     }
 
