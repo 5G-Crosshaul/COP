@@ -572,7 +572,8 @@
         "ServiceEndPointType": {
             "properties": {
                 "edgeEndId": {
-                    "type": "string"
+                    "type": "string",
+                    "x-path": "/topologies/topology/nodes/edge_end/edge_end_id"
                 },
                 "name": {
                     "type": "string"
@@ -581,7 +582,8 @@
                     "type": "string"
                 },
                 "nodeId": {
-                    "type": "string"
+                    "type": "string",
+                    "x-path": "/topologies/topology/nodes/node_id"
                 }
             }
         },

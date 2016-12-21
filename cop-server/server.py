@@ -18,5 +18,5 @@ app.register_blueprint(getattr(backend_api, 'backend_api'))
 
 if __name__ == "__main__":
     nf = launch_notification_server()
-    app.run(host='0.0.0.0', port = 8081, debug=True)
+    app.run(host='0.0.0.0', port = 8081, debug=False)
     
