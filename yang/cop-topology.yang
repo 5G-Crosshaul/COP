@@ -246,6 +246,10 @@ module cop-topology {
         uses edge;
     }
     
+    grouping wireless_edge{
+        uses edge;
+    }
+    
     grouping service_end_point_type{
         leaf sep_id{
             type string;
