@@ -318,7 +318,7 @@ module cop-call {
         description "Basic Traffic Parameters to be offered within a Call";
         leaf reserved_bandwidth {
             description "Reserved Bandwidth measured in Mb/s i.e. 10, 100, 1000 Mb/s";
-            type int32;
+            type string;
         }
 		    leaf latency {
 			      description "Connection latency measured in ms";
