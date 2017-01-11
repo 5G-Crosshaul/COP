@@ -86,16 +86,7 @@ module cop-call {
         default forward;
     }
 
-    typedef protocol-type{
-        type enumeration{
-            enum TCP;
-            enum UDP;
-            enum ARP;
-            enum DHCP;
-        }
-    }
-
-    grouping transport_layer-type{
+    grouping transport-layer-type{
         description "";
         leaf layer {
             type transport_layer_type_enumeration;
@@ -136,7 +127,7 @@ module cop-call {
         }
         list topo_components{
             key "endpoint_id";
-            uses endpoint;
+            uses service-endpoint;
         }
         leaf no_path{
             type boolean;
@@ -292,29 +283,32 @@ module cop-call {
     }
 
 
-    grouping endpoint {
+    grouping service-endpoint {
         description "The End-Point represents the access to the forwarding (as Connection-End-Point) and/or adjacency (as Link-End-Point) function";
 
         leaf endpoint_id{
             type string;
             description "Name of the endpoint, for example host1-port1";
         }
+        leaf name{
+            type string;
+        }
         leaf node_id{
             mandatory true;
             config false;
             type leafref {
-              path '/cop-topology:topologies/cop-topology:topology/cop-topology:nodes/cop-topology:node_id';
+              path '/cop-topology:context/cop-topology:topology/cop-topology:nodes/cop-topology:node_id';
             }
         }
         leaf edge_end_id{
             config false;
             type leafref {
-              path '/cop-topology:topologies/cop-topology:topology/cop-topology:nodes/cop-topology:edge_end/cop-topology:edge_end_id';
+              path '/cop-topology:context/cop-topology:topology/cop-topology:nodes/cop-topology:edge_end/cop-topology:edge_end_id';
             }
         }
     }
 
-    grouping traffic_params{
+    grouping traffic-params{
         description "Basic Traffic Parameters to be offered within a Call";
         leaf reserved_bandwidth {
             description "Reserved Bandwidth measured in Mb/s i.e. 10, 100, 1000 Mb/s";
@@ -349,10 +343,10 @@ module cop-call {
             type string;
         }
         container aEnd{
-            uses endpoint;
+            uses service-endpoint;
         }
         container zEnd{
-            uses endpoint;
+            uses service-endpoint;
         }
         container path{
             uses path-type;
@@ -361,13 +355,13 @@ module cop-call {
             uses match-rules;
         }
         container traffic_params {
-            uses traffic_params;
+            uses traffic-params;
         }
         leaf controller_domain_id{
              type string;
         }
         container transport_layer{
-            uses transport_layer-type;
+            uses transport-layer-type;
         }
         leaf operStatus {
             description "Running status";
@@ -383,6 +377,12 @@ module cop-call {
                 }
             }
         }
+        leaf context_id{
+            config false;
+            type leafref{
+                path '/cop-topology:context/cop-topology:context_id';
+            }
+        }
     }
 
     grouping call {
@@ -393,13 +393,13 @@ module cop-call {
             type string;
         }
         container aEnd{
-            uses endpoint;
+            uses service-endpoint;
         }
         container zEnd{
-            uses endpoint;
+            uses service-endpoint;
         }
         container transport_layer{
-            uses transport_layer-type;
+            uses transport-layer-type;
         }
         leaf operStatus {
             config false;
@@ -419,12 +419,18 @@ module cop-call {
             uses match-rules;
         }
         container traffic_params {
-            uses traffic_params;
+            uses traffic-params;
         }
         list connections{
             config false;
             key "connection_id";
             uses connection;
+        }
+        leaf context_id{
+            config false;
+            type leafref{
+                path '/cop-topology:context/cop-topology:context_id';
+            }
         }
     }
 

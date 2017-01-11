@@ -52,7 +52,6 @@ from funcs_cop_call.callsCallCallidMatchInclude_PathLabelImpl import CallsCallCa
 from funcs_cop_call.callsCallCallidZendImpl import CallsCallCallidZendImpl
 
 # CALLABLE OBJECTS
-from objects_cop_call.endpoint import Endpoint
 from objects_cop_call.connectionsSchema import ConnectionsSchema
 from objects_cop_call.trafficParams import TrafficParams
 from objects_cop_call.pathType import PathType
@@ -61,6 +60,7 @@ from objects_cop_call.transportLayerType import TransportLayerType
 from objects_cop_call.connection import Connection
 from objects_cop_call.call import Call
 from objects_cop_call.callsSchema import CallsSchema
+from objects_cop_call.serviceEndpoint import ServiceEndpoint
 from objects_cop_call.matchRules import MatchRules
 
 users = {"admin": "pswd1", "user": "pswd2"}
@@ -502,7 +502,7 @@ class ConnectionsConnectionConnectionidAendMethodView(MethodView):
             if inst.args[0] != 'connectionId':
                 return NotFoundError(inst.args[0] + " not found")
 
-            new_object = create_instance(Endpoint, json_struct)
+            new_object = create_instance(ServiceEndpoint, json_struct)
             if isinstance(new_object, BadRequestError):
                 return new_object
             elif isinstance(new_object, NotFoundError):
@@ -539,7 +539,7 @@ class ConnectionsConnectionConnectionidAendMethodView(MethodView):
                 return NotFoundError(inst.args[0] + " not found")
 
             json_struct = request.get_json() #json parser.
-            new_object = create_instance(Endpoint, json_struct)
+            new_object = create_instance(ServiceEndpoint, json_struct)
             if isinstance(new_object, BadRequestError):
                 return new_object
             elif isinstance(new_object, NotFoundError):
@@ -674,7 +674,7 @@ class ConnectionsConnectionConnectionidMatchInclude_PathTopo_ComponentsEndpointi
             if inst.args[0] != 'endpointId':
                 return NotFoundError(inst.args[0] + " not found")
 
-            new_object = create_instance(Endpoint, json_struct)
+            new_object = create_instance(ServiceEndpoint, json_struct)
             if isinstance(new_object, BadRequestError):
                 return new_object
             elif isinstance(new_object, NotFoundError):
@@ -711,7 +711,7 @@ class ConnectionsConnectionConnectionidMatchInclude_PathTopo_ComponentsEndpointi
                 return NotFoundError(inst.args[0] + " not found")
 
             json_struct = request.get_json() #json parser.
-            new_object = create_instance(Endpoint, json_struct, (endpointId,'endpointId'))
+            new_object = create_instance(ServiceEndpoint, json_struct, (endpointId,'endpointId'))
             if isinstance(new_object, BadRequestError):
                 return new_object
             elif isinstance(new_object, NotFoundError):
@@ -860,7 +860,7 @@ class CallsCallCallidMatchInclude_PathTopo_ComponentsEndpointidMethodView(Method
             if inst.args[0] != 'endpointId':
                 return NotFoundError(inst.args[0] + " not found")
 
-            new_object = create_instance(Endpoint, json_struct)
+            new_object = create_instance(ServiceEndpoint, json_struct)
             if isinstance(new_object, BadRequestError):
                 return new_object
             elif isinstance(new_object, NotFoundError):
@@ -897,7 +897,7 @@ class CallsCallCallidMatchInclude_PathTopo_ComponentsEndpointidMethodView(Method
                 return NotFoundError(inst.args[0] + " not found")
 
             json_struct = request.get_json() #json parser.
-            new_object = create_instance(Endpoint, json_struct, (endpointId,'endpointId'))
+            new_object = create_instance(ServiceEndpoint, json_struct, (endpointId,'endpointId'))
             if isinstance(new_object, BadRequestError):
                 return new_object
             elif isinstance(new_object, NotFoundError):
@@ -1574,7 +1574,7 @@ class ConnectionsConnectionConnectionidZendMethodView(MethodView):
             if inst.args[0] != 'connectionId':
                 return NotFoundError(inst.args[0] + " not found")
 
-            new_object = create_instance(Endpoint, json_struct)
+            new_object = create_instance(ServiceEndpoint, json_struct)
             if isinstance(new_object, BadRequestError):
                 return new_object
             elif isinstance(new_object, NotFoundError):
@@ -1611,7 +1611,7 @@ class ConnectionsConnectionConnectionidZendMethodView(MethodView):
                 return NotFoundError(inst.args[0] + " not found")
 
             json_struct = request.get_json() #json parser.
-            new_object = create_instance(Endpoint, json_struct)
+            new_object = create_instance(ServiceEndpoint, json_struct)
             if isinstance(new_object, BadRequestError):
                 return new_object
             elif isinstance(new_object, NotFoundError):
@@ -2132,7 +2132,7 @@ class ConnectionsConnectionConnectionidPathTopo_ComponentsEndpointidMethodView(M
             if inst.args[0] != 'endpointId':
                 return NotFoundError(inst.args[0] + " not found")
 
-            new_object = create_instance(Endpoint, json_struct)
+            new_object = create_instance(ServiceEndpoint, json_struct)
             if isinstance(new_object, BadRequestError):
                 return new_object
             elif isinstance(new_object, NotFoundError):
@@ -2169,7 +2169,7 @@ class ConnectionsConnectionConnectionidPathTopo_ComponentsEndpointidMethodView(M
                 return NotFoundError(inst.args[0] + " not found")
 
             json_struct = request.get_json() #json parser.
-            new_object = create_instance(Endpoint, json_struct, (endpointId,'endpointId'))
+            new_object = create_instance(ServiceEndpoint, json_struct, (endpointId,'endpointId'))
             if isinstance(new_object, BadRequestError):
                 return new_object
             elif isinstance(new_object, NotFoundError):
@@ -2218,7 +2218,7 @@ class CallsCallCallidAendMethodView(MethodView):
             if inst.args[0] != 'callId':
                 return NotFoundError(inst.args[0] + " not found")
 
-            new_object = create_instance(Endpoint, json_struct)
+            new_object = create_instance(ServiceEndpoint, json_struct)
             if isinstance(new_object, BadRequestError):
                 return new_object
             elif isinstance(new_object, NotFoundError):
@@ -2255,7 +2255,7 @@ class CallsCallCallidAendMethodView(MethodView):
                 return NotFoundError(inst.args[0] + " not found")
 
             json_struct = request.get_json() #json parser.
-            new_object = create_instance(Endpoint, json_struct)
+            new_object = create_instance(ServiceEndpoint, json_struct)
             if isinstance(new_object, BadRequestError):
                 return new_object
             elif isinstance(new_object, NotFoundError):
@@ -2390,7 +2390,7 @@ class CallsCallCallidZendMethodView(MethodView):
             if inst.args[0] != 'callId':
                 return NotFoundError(inst.args[0] + " not found")
 
-            new_object = create_instance(Endpoint, json_struct)
+            new_object = create_instance(ServiceEndpoint, json_struct)
             if isinstance(new_object, BadRequestError):
                 return new_object
             elif isinstance(new_object, NotFoundError):
@@ -2427,7 +2427,7 @@ class CallsCallCallidZendMethodView(MethodView):
                 return NotFoundError(inst.args[0] + " not found")
 
             json_struct = request.get_json() #json parser.
-            new_object = create_instance(Endpoint, json_struct)
+            new_object = create_instance(ServiceEndpoint, json_struct)
             if isinstance(new_object, BadRequestError):
                 return new_object
             elif isinstance(new_object, NotFoundError):

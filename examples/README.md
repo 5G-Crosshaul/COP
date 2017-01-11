@@ -1,8 +1,8 @@
 # COP usage examples
 
-## Request topology
+## Request context
 
-curl -X GET -H "Content-type:application/json" -u admin:pswd1 http://localhost:8081/restconf/config/topologies/
+curl -X GET -H "Content-type:application/json" -u admin:pswd1 http://localhost:8081/restconf/config/context/
 
 ## Create a Service Call
 

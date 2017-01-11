@@ -4,7 +4,7 @@ import json
 from objects_common.keyedArrayType import KeyedArrayType
 from objects_cop_call.callsSchema import CallsSchema as CallsSchema_object
 from objects_cop_call.connectionsSchema import ConnectionsSchema as ConnectionsSchema_object
-from objects_cop_topology.topologiesSchema import TopologiesSchema as TopologiesSchema_object
+from objects_cop_topology.contextSchema import ContextSchema as ContextSchema_object
 
 """
 class TopLevelObject(jsonObject):
@@ -34,13 +34,13 @@ filename = 'server_backend_state.json'
 
 calls = CallsSchema_object()
 connections = ConnectionsSchema_object()
-topologies = TopologiesSchema_object()
+context = ContextSchema_object()
 
 def save_state():
     json_struct = {}
     json_struct['calls'] = calls.json_serializer()
     json_struct['connections'] = connections.json_serializer()
-    json_struct['topologies'] = topologies.json_serializer()
+    json_struct['context'] = context.json_serializer()
 
     json_string = json_dumps(json_struct)
     out = open(filename, 'w+')
@@ -57,6 +57,6 @@ def load_state():
     calls = CallsSchema_object(json_struct['calls'])
     global connections
     connections = ConnectionsSchema_object(json_struct['connections'])
-    global topologies
-    topologies = TopologiesSchema_object(json_struct['topologies'])
+    global context
+    context = ContextSchema_object(json_struct['context'])
     return True

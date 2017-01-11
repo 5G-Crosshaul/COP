@@ -6,20 +6,20 @@ import backend.backend as be
 class CallsCallCallidMatchInclude_PathTopo_ComponentsEndpointidImpl:
 
     @classmethod
-    def put(cls, callId, endpointId, endpoint):
-        print str(endpoint)
+    def put(cls, callId, endpointId, serviceendpoint):
+        print str(serviceendpoint)
         print 'handling put'
         if callId in calls.call:
-            be.calls.call[callId].match.includePath.topoComponents[endpointId] = endpoint
+            be.calls.call[callId].match.includePath.topoComponents[endpointId] = serviceendpoint
         else:
             raise KeyError('endpointId')
 
     @classmethod
-    def post(cls, callId, endpointId, endpoint):
-        print str(endpoint)
+    def post(cls, callId, endpointId, serviceendpoint):
+        print str(serviceendpoint)
         print 'handling post'
         if callId in calls.call:
-            be.calls.call[callId].match.includePath.topoComponents[endpointId] = endpoint
+            be.calls.call[callId].match.includePath.topoComponents[endpointId] = serviceendpoint
         else:
             raise KeyError('endpointId')
 

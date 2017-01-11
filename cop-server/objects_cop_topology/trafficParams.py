@@ -1,5 +1,4 @@
 from objects_common.jsonObject import JsonObject
-from objects_common.enumType import EnumType
 
 class TrafficParams(JsonObject):
 
@@ -7,13 +6,7 @@ class TrafficParams(JsonObject):
         self.latency=0
         self.OSNR=""
         self.estimatedPLR=""
-        self.qosClass=Qosclass(0)
+        self.qosClass=""
         self.reservedBandwidth=""
         super(TrafficParams, self).__init__(json_struct)
 
-class Qosclass(EnumType):
-    possible_values = ['gold', 'silver']
-    range_end = 2
-
-    def __init__(self, initial_value):
-        super(Qosclass, self).__init__(initial_value)
