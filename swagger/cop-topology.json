@@ -11,32 +11,32 @@
         "http"
     ],
     "paths": {
-        "/config/topologies/": {
+        "/config/context/": {
             "get": {
                 "responses": {
                     "200": {
                         "description": "Successful operation",
                         "schema": {
-                            "$ref": "#/definitions/TopologiesSchema"
+                            "$ref": "#/definitions/ContextSchema"
                         }
                     },
                     "400": {
                         "description": "Internal Error"
                     }
                 },
-                "description": "Retrieve operation of resource: topologies",
+                "description": "Retrieve operation of resource: context",
                 "parameters": [],
                 "produces": [
                     "application/json"
                 ],
-                "summary": "Retrieve topologies",
+                "summary": "Retrieve context",
                 "consumes": [
                     "application/json"
                 ],
-                "operationId": "retrieveTopologies"
+                "operationId": "retrieveContext"
             }
         },
-        "/config/topologies/topology/": {
+        "/config/context/topology/": {
             "get": {
                 "responses": {
                     "200": {
@@ -44,7 +44,7 @@
                         "schema": {
                             "items": {
                                 "type": "string",
-                                "x-path": "/topologies/topology/{topologyId}/"
+                                "x-path": "/context/topology/{topologyId}/"
                             },
                             "type": "array"
                         }
@@ -62,10 +62,10 @@
                 "consumes": [
                     "application/json"
                 ],
-                "operationId": "retrieveTopologiesTopologyTopology"
+                "operationId": "retrieveContextTopologyTopology"
             }
         },
-        "/config/topologies/topology/{topologyId}/": {
+        "/config/context/topology/{topologyId}/": {
             "get": {
                 "responses": {
                     "200": {
@@ -95,10 +95,10 @@
                 "consumes": [
                     "application/json"
                 ],
-                "operationId": "retrieveTopologiesTopologyTopologyById"
+                "operationId": "retrieveContextTopologyTopologyById"
             }
         },
-        "/config/topologies/topology/{topologyId}/nodes/": {
+        "/config/context/topology/{topologyId}/nodes/": {
             "get": {
                 "responses": {
                     "200": {
@@ -106,7 +106,7 @@
                         "schema": {
                             "items": {
                                 "type": "string",
-                                "x-path": "/topologies/topology/{topologyId}/nodes/{nodeId}/"
+                                "x-path": "/context/topology/{topologyId}/nodes/{nodeId}/"
                             },
                             "type": "array"
                         }
@@ -132,10 +132,10 @@
                 "consumes": [
                     "application/json"
                 ],
-                "operationId": "retrieveTopologiesTopologyNodesNodes"
+                "operationId": "retrieveContextTopologyNodesNodes"
             }
         },
-        "/config/topologies/topology/{topologyId}/nodes/{nodeId}/": {
+        "/config/context/topology/{topologyId}/nodes/{nodeId}/": {
             "get": {
                 "responses": {
                     "200": {
@@ -172,10 +172,10 @@
                 "consumes": [
                     "application/json"
                 ],
-                "operationId": "retrieveTopologiesTopologyNodesNodesById"
+                "operationId": "retrieveContextTopologyNodesNodesById"
             }
         },
-        "/config/topologies/topology/{topologyId}/nodes/{nodeId}/edge_end/": {
+        "/config/context/topology/{topologyId}/nodes/{nodeId}/edge_end/": {
             "get": {
                 "responses": {
                     "200": {
@@ -183,7 +183,7 @@
                         "schema": {
                             "items": {
                                 "type": "string",
-                                "x-path": "/topologies/topology/{topologyId}/nodes/{nodeId}/edge_end/{edgeEndId}/"
+                                "x-path": "/context/topology/{topologyId}/nodes/{nodeId}/edge_end/{edgeEndId}/"
                             },
                             "type": "array"
                         }
@@ -216,10 +216,10 @@
                 "consumes": [
                     "application/json"
                 ],
-                "operationId": "retrieveTopologiesTopologyNodesEdgeEndEdgeEnd"
+                "operationId": "retrieveContextTopologyNodesEdgeEndEdgeEnd"
             }
         },
-        "/config/topologies/topology/{topologyId}/nodes/{nodeId}/edge_end/{edgeEndId}/": {
+        "/config/context/topology/{topologyId}/nodes/{nodeId}/edge_end/{edgeEndId}/": {
             "get": {
                 "responses": {
                     "200": {
@@ -263,10 +263,10 @@
                 "consumes": [
                     "application/json"
                 ],
-                "operationId": "retrieveTopologiesTopologyNodesEdgeEndEdgeEndById"
+                "operationId": "retrieveContextTopologyNodesEdgeEndEdgeEndById"
             }
         },
-        "/config/topologies/topology/{topologyId}/edges/": {
+        "/config/context/topology/{topologyId}/edges/": {
             "get": {
                 "responses": {
                     "200": {
@@ -274,7 +274,7 @@
                         "schema": {
                             "items": {
                                 "type": "string",
-                                "x-path": "/topologies/topology/{topologyId}/edges/{edgeId}/"
+                                "x-path": "/context/topology/{topologyId}/edges/{edgeId}/"
                             },
                             "type": "array"
                         }
@@ -300,10 +300,10 @@
                 "consumes": [
                     "application/json"
                 ],
-                "operationId": "retrieveTopologiesTopologyEdgesEdges"
+                "operationId": "retrieveContextTopologyEdgesEdges"
             }
         },
-        "/config/topologies/topology/{topologyId}/edges/{edgeId}/": {
+        "/config/context/topology/{topologyId}/edges/{edgeId}/": {
             "get": {
                 "responses": {
                     "200": {
@@ -340,10 +340,10 @@
                 "consumes": [
                     "application/json"
                 ],
-                "operationId": "retrieveTopologiesTopologyEdgesEdgesById"
+                "operationId": "retrieveContextTopologyEdgesEdgesById"
             }
         },
-        "/config/topologies/service_end_point/": {
+        "/config/context/service_endpoint/": {
             "get": {
                 "responses": {
                     "200": {
@@ -351,7 +351,7 @@
                         "schema": {
                             "items": {
                                 "type": "string",
-                                "x-path": "/topologies/service_end_point/{sepId}/"
+                                "x-path": "/context/service_endpoint/{endpointId}/"
                             },
                             "type": "array"
                         }
@@ -360,49 +360,49 @@
                         "description": "Internal Error"
                     }
                 },
-                "description": "Retrieve operation of resource: service_end_point",
+                "description": "Retrieve operation of resource: service_endpoint",
                 "parameters": [],
                 "produces": [
                     "application/json"
                 ],
-                "summary": "Retrieve service_end_point",
+                "summary": "Retrieve service_endpoint",
                 "consumes": [
                     "application/json"
                 ],
-                "operationId": "retrieveTopologiesServiceEndPointServiceEndPoint"
+                "operationId": "retrieveContextServiceEndpointServiceEndpoint"
             }
         },
-        "/config/topologies/service_end_point/{sepId}/": {
+        "/config/context/service_endpoint/{endpointId}/": {
             "get": {
                 "responses": {
                     "200": {
                         "description": "Successful operation",
                         "schema": {
-                            "$ref": "#/definitions/ServiceEndPointType"
+                            "$ref": "#/definitions/ServiceEndpoint"
                         }
                     },
                     "400": {
                         "description": "Internal Error"
                     }
                 },
-                "description": "Retrieve operation of resource: service_end_point",
+                "description": "Retrieve operation of resource: service_endpoint",
                 "parameters": [
                     {
-                        "description": "ID of sepId",
+                        "description": "ID of endpointId",
                         "required": true,
                         "type": "string",
-                        "name": "sepId",
+                        "name": "endpointId",
                         "in": "path"
                     }
                 ],
                 "produces": [
                     "application/json"
                 ],
-                "summary": "Retrieve service_end_point by ID",
+                "summary": "Retrieve service_endpoint by ID",
                 "consumes": [
                     "application/json"
                 ],
-                "operationId": "retrieveTopologiesServiceEndPointServiceEndPointById"
+                "operationId": "retrieveContextServiceEndpointServiceEndpointById"
             }
         },
         "/streams/update_topology/": {
@@ -504,6 +504,9 @@
         "EthEdge": {
             "$ref": "#/definitions/Edge"
         },
+        "WirelessEdge": {
+            "$ref": "#/definitions/Edge"
+        },
         "Bitmap": {
             "properties": {
                 "arrayBits": {
@@ -550,40 +553,22 @@
                 },
                 "source": {
                     "type": "string",
-                    "x-path": "/topologies/topology/nodes/node_id"
+                    "x-path": "/context/topology/nodes/node_id"
                 },
                 "localIfid": {
                     "type": "string",
-                    "x-path": "/topologies/topology/nodes/edge_end/edge_end_id"
+                    "x-path": "/context/topology/nodes/edge_end/edge_end_id"
                 },
                 "remoteIfid": {
                     "type": "string",
-                    "x-path": "/topologies/topology/nodes/edge_end/edge_end_id"
+                    "x-path": "/context/topology/nodes/edge_end/edge_end_id"
                 },
                 "unreservBw": {
                     "type": "string"
                 },
                 "target": {
                     "type": "string",
-                    "x-path": "/topologies/topology/nodes/node_id"
-                }
-            }
-        },
-        "ServiceEndPointType": {
-            "properties": {
-                "edgeEndId": {
-                    "type": "string",
-                    "x-path": "/topologies/topology/nodes/edge_end/edge_end_id"
-                },
-                "name": {
-                    "type": "string"
-                },
-                "sepId": {
-                    "type": "string"
-                },
-                "nodeId": {
-                    "type": "string",
-                    "x-path": "/topologies/topology/nodes/node_id"
+                    "x-path": "/context/topology/nodes/node_id"
                 }
             }
         },
@@ -648,14 +633,374 @@
                 }
             }
         },
-        "TopologiesSchema": {
+        "ServiceEndpoint": {
+            "description": "The End-Point represents the access to the forwarding (as Connection-End-Point) and/or adjacency (as Link-End-Point) function",
             "properties": {
-                "serviceEndPoint": {
+                "edgeEndId": {
+                    "type": "string",
+                    "x-path": "/cop-topology:context/cop-topology:topology/cop-topology:nodes/cop-topology:edge_end/cop-topology:edge_end_id"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "endpointId": {
+                    "type": "string",
+                    "description": "Name of the endpoint, for example host1-port1"
+                },
+                "nodeId": {
+                    "type": "string",
+                    "x-path": "/cop-topology:context/cop-topology:topology/cop-topology:nodes/cop-topology:node_id"
+                }
+            }
+        },
+        "Connection": {
+            "description": "The Connection represents an enabled potential for forwarding (including all circuit and packet forms) between two or more endpoints",
+            "properties": {
+                "controllerDomainId": {
+                    "type": "string"
+                },
+                "contextId": {
+                    "type": "string",
+                    "x-path": "/cop-topology:context/cop-topology:context_id"
+                },
+                "trafficParams": {
+                    "$ref": "#/definitions/TrafficParams"
+                },
+                "connectionId": {
+                    "type": "string"
+                },
+                "zEnd": {
+                    "$ref": "#/definitions/ServiceEndpoint"
+                },
+                "operStatus": {
+                    "enum": [
+                        "down",
+                        "up"
+                    ],
+                    "type": "string",
+                    "description": "Running status"
+                },
+                "aEnd": {
+                    "$ref": "#/definitions/ServiceEndpoint"
+                },
+                "path": {
+                    "$ref": "#/definitions/PathType"
+                },
+                "transportLayer": {
+                    "$ref": "#/definitions/TransportLayerType"
+                },
+                "match": {
+                    "$ref": "#/definitions/MatchRules"
+                }
+            }
+        },
+        "Label": {
+            "description": "",
+            "properties": {
+                "labelType": {
+                    "enum": [
+                        "GMPLS_FIXED",
+                        "GMPLS_FLEXI"
+                    ],
+                    "type": "string"
+                },
+                "labelValue": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            }
+        },
+        "TrafficParams": {
+            "description": "Basic Traffic Parameters to be offered within a Call",
+            "properties": {
+                "latency": {
+                    "type": "integer",
+                    "description": "Connection latency measured in ms",
+                    "format": "int32"
+                },
+                "OSNR": {
+                    "type": "number",
+                    "description": "Optical Signal-to-noise ratio",
+                    "format": "double"
+                },
+                "estimatedPLR": {
+                    "type": "number",
+                    "description": "Estimated packet loss ratio in %",
+                    "format": "double"
+                },
+                "qosClass": {
+                    "type": "string"
+                },
+                "reservedBandwidth": {
+                    "type": "string",
+                    "description": "Reserved Bandwidth measured in Mb/s i.e. 10, 100, 1000 Mb/s"
+                }
+            }
+        },
+        "MatchRules": {
+            "description": "Match rules for call - OF match rules + extentions",
+            "properties": {
+                "mplsLabel": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "ethType": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "ipEcn": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "icmpv4Type": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "ethDst": {
+                    "type": "string"
+                },
+                "vlanPcp": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "ipv4Dst": {
+                    "type": "string"
+                },
+                "arpTpa": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "arpSha": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "ipv6Exthdr": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "includePath": {
+                    "$ref": "#/definitions/PathType"
+                },
+                "icmpv6Type": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "ipv6Src": {
+                    "type": "string"
+                },
+                "mplsTc": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "tunnelId": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "sctpDst": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "ethSrc": {
+                    "type": "string"
+                },
+                "ipv6NdTarget": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "tcpSrc": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "ipv4Src": {
+                    "type": "string"
+                },
+                "icmpv6Code": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "mplsBos": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "experimentalTeid": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "ipv6NdTll": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "sctpSrc": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "udpDst": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "pbbIsid": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "ipv6Flabel": {
+                    "type": "string"
+                },
+                "inPort": {
+                    "type": "string"
+                },
+                "icmpv4Code": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "ipDscp": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "inPhyPort": {
+                    "type": "string"
+                },
+                "ipProto": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "arpTha": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "arpSpa": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "ipv6Dst": {
+                    "type": "string"
+                },
+                "udpSrc": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "arpOp": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "ipv6NdSll": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "vlanVid": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "experimentalGmplsWsonLabel": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "metadata": {
+                    "type": "string"
+                },
+                "tcpDst": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            }
+        },
+        "PathType": {
+            "description": "The Path represents the individual routes of a Connection.",
+            "properties": {
+                "multiLayer": {
+                    "type": "boolean"
+                },
+                "noPath": {
+                    "type": "boolean"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "topoComponents": {
                     "items": {
-                        "$ref": "#/definitions/ServiceEndPointType"
+                        "$ref": "#/definitions/ServiceEndpoint"
                     },
                     "type": "array",
-                    "x-key": "sepId"
+                    "x-key": "endpointId"
+                },
+                "label": {
+                    "$ref": "#/definitions/Label"
+                }
+            }
+        },
+        "Call": {
+            "description": "A call represents an \u201cintent-request\u201d for connectivity within a Forwarding-Domain between the endpoints. Call is distinct from the Connection that realizes the Call.",
+            "properties": {
+                "contextId": {
+                    "type": "string",
+                    "x-path": "/cop-topology:context/cop-topology:context_id"
+                },
+                "operStatus": {
+                    "enum": [
+                        "down",
+                        "up"
+                    ],
+                    "type": "string",
+                    "description": "Running status"
+                },
+                "callId": {
+                    "type": "string"
+                },
+                "zEnd": {
+                    "$ref": "#/definitions/ServiceEndpoint"
+                },
+                "connections": {
+                    "items": {
+                        "$ref": "#/definitions/Connection"
+                    },
+                    "type": "array",
+                    "x-key": "connectionId"
+                },
+                "trafficParams": {
+                    "$ref": "#/definitions/TrafficParams"
+                },
+                "aEnd": {
+                    "$ref": "#/definitions/ServiceEndpoint"
+                },
+                "transportLayer": {
+                    "$ref": "#/definitions/TransportLayerType"
+                },
+                "match": {
+                    "$ref": "#/definitions/MatchRules"
+                }
+            }
+        },
+        "TransportLayerType": {
+            "description": "",
+            "properties": {
+                "action": {
+                    "type": "string"
+                },
+                "layer": {
+                    "type": "string"
+                },
+                "direction": {
+                    "type": "string"
+                },
+                "layerId": {
+                    "type": "string"
+                }
+            }
+        },
+        "ContextSchema": {
+            "properties": {
+                "contextId": {
+                    "type": "string"
+                },
+                "parentContext": {
+                    "type": "string",
+                    "x-path": "/context/context_id"
+                },
+                "serviceEndpoint": {
+                    "items": {
+                        "$ref": "#/definitions/ServiceEndpoint"
+                    },
+                    "type": "array",
+                    "x-key": "endpointId"
                 },
                 "topology": {
                     "items": {
@@ -663,6 +1008,9 @@
                     },
                     "type": "array",
                     "x-key": "topologyId"
+                },
+                "provider": {
+                    "type": "boolean"
                 }
             }
         }

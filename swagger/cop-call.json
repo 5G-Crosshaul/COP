@@ -356,7 +356,7 @@
                         "required": true,
                         "description": "aEndbody object",
                         "schema": {
-                            "$ref": "#/definitions/Endpoint"
+                            "$ref": "#/definitions/ServiceEndpoint"
                         },
                         "name": "aEnd",
                         "in": "body"
@@ -393,7 +393,7 @@
                         "required": true,
                         "description": "aEndbody object",
                         "schema": {
-                            "$ref": "#/definitions/Endpoint"
+                            "$ref": "#/definitions/ServiceEndpoint"
                         },
                         "name": "aEnd",
                         "in": "body"
@@ -441,7 +441,7 @@
                     "200": {
                         "description": "Successful operation",
                         "schema": {
-                            "$ref": "#/definitions/Endpoint"
+                            "$ref": "#/definitions/ServiceEndpoint"
                         }
                     },
                     "400": {
@@ -491,7 +491,7 @@
                         "required": true,
                         "description": "zEndbody object",
                         "schema": {
-                            "$ref": "#/definitions/Endpoint"
+                            "$ref": "#/definitions/ServiceEndpoint"
                         },
                         "name": "zEnd",
                         "in": "body"
@@ -528,7 +528,7 @@
                         "required": true,
                         "description": "zEndbody object",
                         "schema": {
-                            "$ref": "#/definitions/Endpoint"
+                            "$ref": "#/definitions/ServiceEndpoint"
                         },
                         "name": "zEnd",
                         "in": "body"
@@ -576,7 +576,7 @@
                     "200": {
                         "description": "Successful operation",
                         "schema": {
-                            "$ref": "#/definitions/Endpoint"
+                            "$ref": "#/definitions/ServiceEndpoint"
                         }
                     },
                     "400": {
@@ -1075,7 +1075,7 @@
                         "required": true,
                         "description": "topo_componentsbody object",
                         "schema": {
-                            "$ref": "#/definitions/Endpoint"
+                            "$ref": "#/definitions/ServiceEndpoint"
                         },
                         "name": "topo_components",
                         "in": "body"
@@ -1119,7 +1119,7 @@
                         "required": true,
                         "description": "topo_componentsbody object",
                         "schema": {
-                            "$ref": "#/definitions/Endpoint"
+                            "$ref": "#/definitions/ServiceEndpoint"
                         },
                         "name": "topo_components",
                         "in": "body"
@@ -1174,7 +1174,7 @@
                     "200": {
                         "description": "Successful operation",
                         "schema": {
-                            "$ref": "#/definitions/Endpoint"
+                            "$ref": "#/definitions/ServiceEndpoint"
                         }
                     },
                     "400": {
@@ -1561,7 +1561,7 @@
                     "200": {
                         "description": "Successful operation",
                         "schema": {
-                            "$ref": "#/definitions/Endpoint"
+                            "$ref": "#/definitions/ServiceEndpoint"
                         }
                     },
                     "400": {
@@ -1601,7 +1601,7 @@
                     "200": {
                         "description": "Successful operation",
                         "schema": {
-                            "$ref": "#/definitions/Endpoint"
+                            "$ref": "#/definitions/ServiceEndpoint"
                         }
                     },
                     "400": {
@@ -1725,7 +1725,7 @@
                     "200": {
                         "description": "Successful operation",
                         "schema": {
-                            "$ref": "#/definitions/Endpoint"
+                            "$ref": "#/definitions/ServiceEndpoint"
                         }
                     },
                     "400": {
@@ -1936,7 +1936,7 @@
                     "200": {
                         "description": "Successful operation",
                         "schema": {
-                            "$ref": "#/definitions/Endpoint"
+                            "$ref": "#/definitions/ServiceEndpoint"
                         }
                     },
                     "400": {
@@ -2388,7 +2388,7 @@
                         "required": true,
                         "description": "aEndbody object",
                         "schema": {
-                            "$ref": "#/definitions/Endpoint"
+                            "$ref": "#/definitions/ServiceEndpoint"
                         },
                         "name": "aEnd",
                         "in": "body"
@@ -2425,7 +2425,7 @@
                         "required": true,
                         "description": "aEndbody object",
                         "schema": {
-                            "$ref": "#/definitions/Endpoint"
+                            "$ref": "#/definitions/ServiceEndpoint"
                         },
                         "name": "aEnd",
                         "in": "body"
@@ -2473,7 +2473,7 @@
                     "200": {
                         "description": "Successful operation",
                         "schema": {
-                            "$ref": "#/definitions/Endpoint"
+                            "$ref": "#/definitions/ServiceEndpoint"
                         }
                     },
                     "400": {
@@ -2523,7 +2523,7 @@
                         "required": true,
                         "description": "zEndbody object",
                         "schema": {
-                            "$ref": "#/definitions/Endpoint"
+                            "$ref": "#/definitions/ServiceEndpoint"
                         },
                         "name": "zEnd",
                         "in": "body"
@@ -2560,7 +2560,7 @@
                         "required": true,
                         "description": "zEndbody object",
                         "schema": {
-                            "$ref": "#/definitions/Endpoint"
+                            "$ref": "#/definitions/ServiceEndpoint"
                         },
                         "name": "zEnd",
                         "in": "body"
@@ -2608,7 +2608,7 @@
                     "200": {
                         "description": "Successful operation",
                         "schema": {
-                            "$ref": "#/definitions/Endpoint"
+                            "$ref": "#/definitions/ServiceEndpoint"
                         }
                     },
                     "400": {
@@ -2837,7 +2837,7 @@
                         "required": true,
                         "description": "topo_componentsbody object",
                         "schema": {
-                            "$ref": "#/definitions/Endpoint"
+                            "$ref": "#/definitions/ServiceEndpoint"
                         },
                         "name": "topo_components",
                         "in": "body"
@@ -2881,7 +2881,7 @@
                         "required": true,
                         "description": "topo_componentsbody object",
                         "schema": {
-                            "$ref": "#/definitions/Endpoint"
+                            "$ref": "#/definitions/ServiceEndpoint"
                         },
                         "name": "topo_components",
                         "in": "body"
@@ -2936,7 +2936,7 @@
                     "200": {
                         "description": "Successful operation",
                         "schema": {
-                            "$ref": "#/definitions/Endpoint"
+                            "$ref": "#/definitions/ServiceEndpoint"
                         }
                     },
                     "400": {
@@ -3442,7 +3442,7 @@
                         "required": true,
                         "description": "topo_componentsbody object",
                         "schema": {
-                            "$ref": "#/definitions/Endpoint"
+                            "$ref": "#/definitions/ServiceEndpoint"
                         },
                         "name": "topo_components",
                         "in": "body"
@@ -3486,7 +3486,7 @@
                         "required": true,
                         "description": "topo_componentsbody object",
                         "schema": {
-                            "$ref": "#/definitions/Endpoint"
+                            "$ref": "#/definitions/ServiceEndpoint"
                         },
                         "name": "topo_components",
                         "in": "body"
@@ -3541,7 +3541,7 @@
                     "200": {
                         "description": "Successful operation",
                         "schema": {
-                            "$ref": "#/definitions/Endpoint"
+                            "$ref": "#/definitions/ServiceEndpoint"
                         }
                     },
                     "400": {
@@ -3982,52 +3982,23 @@
         }
     },
     "definitions": {
-        "Endpoint": {
+        "ServiceEndpoint": {
             "description": "The End-Point represents the access to the forwarding (as Connection-End-Point) and/or adjacency (as Link-End-Point) function",
             "properties": {
                 "edgeEndId": {
                     "type": "string",
-                    "x-path": "/cop-topology:topologies/cop-topology:topology/cop-topology:nodes/cop-topology:edge_end/cop-topology:edge_end_id"
+                    "x-path": "/cop-topology:context/cop-topology:topology/cop-topology:nodes/cop-topology:edge_end/cop-topology:edge_end_id"
                 },
-                "nodeId": {
-                    "type": "string",
-                    "x-path": "/cop-topology:topologies/cop-topology:topology/cop-topology:nodes/cop-topology:node_id"
+                "name": {
+                    "type": "string"
                 },
                 "endpointId": {
                     "type": "string",
                     "description": "Name of the endpoint, for example host1-port1"
-                }
-            }
-        },
-        "TransportLayerType": {
-            "description": "",
-            "properties": {
-                "action": {
-                    "enum": [
-                        "forward",
-                        "push_tag",
-                        "pop_tag"
-                    ],
-                    "type": "string"
                 },
-                "layer": {
-                    "enum": [
-                        "dwdm_link",
-                        "ethernet",
-                        "ethernet_broadcast",
-                        "mpls"
-                    ],
-                    "type": "string"
-                },
-                "direction": {
-                    "enum": [
-                        "unidir",
-                        "bidir"
-                    ],
-                    "type": "string"
-                },
-                "layerId": {
-                    "type": "string"
+                "nodeId": {
+                    "type": "string",
+                    "x-path": "/cop-topology:context/cop-topology:topology/cop-topology:nodes/cop-topology:node_id"
                 }
             }
         },
@@ -4037,6 +4008,10 @@
                 "controllerDomainId": {
                     "type": "string"
                 },
+                "contextId": {
+                    "type": "string",
+                    "x-path": "/cop-topology:context/cop-topology:context_id"
+                },
                 "trafficParams": {
                     "$ref": "#/definitions/TrafficParams"
                 },
@@ -4044,7 +4019,7 @@
                     "type": "string"
                 },
                 "zEnd": {
-                    "$ref": "#/definitions/Endpoint"
+                    "$ref": "#/definitions/ServiceEndpoint"
                 },
                 "operStatus": {
                     "enum": [
@@ -4055,7 +4030,7 @@
                     "description": "Running status"
                 },
                 "aEnd": {
-                    "$ref": "#/definitions/Endpoint"
+                    "$ref": "#/definitions/ServiceEndpoint"
                 },
                 "path": {
                     "$ref": "#/definitions/PathType"
@@ -4065,6 +4040,22 @@
                 },
                 "match": {
                     "$ref": "#/definitions/MatchRules"
+                }
+            }
+        },
+        "Label": {
+            "description": "",
+            "properties": {
+                "labelType": {
+                    "enum": [
+                        "GMPLS_FIXED",
+                        "GMPLS_FLEXI"
+                    ],
+                    "type": "string"
+                },
+                "labelValue": {
+                    "type": "integer",
+                    "format": "int32"
                 }
             }
         },
@@ -4094,25 +4085,8 @@
                     "type": "string"
                 },
                 "reservedBandwidth": {
-                    "type": "integer",
-                    "description": "Reserved Bandwidth measured in Mb/s i.e. 10, 100, 1000 Mb/s",
-                    "format": "int32"
-                }
-            }
-        },
-        "Label": {
-            "description": "",
-            "properties": {
-                "labelType": {
-                    "enum": [
-                        "GMPLS_FIXED",
-                        "GMPLS_FLEXI"
-                    ],
-                    "type": "string"
-                },
-                "labelValue": {
-                    "type": "integer",
-                    "format": "int32"
+                    "type": "string",
+                    "description": "Reserved Bandwidth measured in Mb/s i.e. 10, 100, 1000 Mb/s"
                 }
             }
         },
@@ -4296,7 +4270,7 @@
                 },
                 "topoComponents": {
                     "items": {
-                        "$ref": "#/definitions/Endpoint"
+                        "$ref": "#/definitions/ServiceEndpoint"
                     },
                     "type": "array",
                     "x-key": "endpointId"
@@ -4309,6 +4283,10 @@
         "Call": {
             "description": "A call represents an \u201cintent-request\u201d for connectivity within a Forwarding-Domain between the endpoints. Call is distinct from the Connection that realizes the Call.",
             "properties": {
+                "contextId": {
+                    "type": "string",
+                    "x-path": "/cop-topology:context/cop-topology:context_id"
+                },
                 "operStatus": {
                     "enum": [
                         "down",
@@ -4321,7 +4299,7 @@
                     "type": "string"
                 },
                 "zEnd": {
-                    "$ref": "#/definitions/Endpoint"
+                    "$ref": "#/definitions/ServiceEndpoint"
                 },
                 "connections": {
                     "items": {
@@ -4334,13 +4312,45 @@
                     "$ref": "#/definitions/TrafficParams"
                 },
                 "aEnd": {
-                    "$ref": "#/definitions/Endpoint"
+                    "$ref": "#/definitions/ServiceEndpoint"
                 },
                 "transportLayer": {
                     "$ref": "#/definitions/TransportLayerType"
                 },
                 "match": {
                     "$ref": "#/definitions/MatchRules"
+                }
+            }
+        },
+        "TransportLayerType": {
+            "description": "",
+            "properties": {
+                "action": {
+                    "enum": [
+                        "forward",
+                        "push_tag",
+                        "pop_tag"
+                    ],
+                    "type": "string"
+                },
+                "layer": {
+                    "enum": [
+                        "dwdm_link",
+                        "ethernet",
+                        "ethernet_broadcast",
+                        "mpls"
+                    ],
+                    "type": "string"
+                },
+                "direction": {
+                    "enum": [
+                        "unidir",
+                        "bidir"
+                    ],
+                    "type": "string"
+                },
+                "layerId": {
+                    "type": "string"
                 }
             }
         },

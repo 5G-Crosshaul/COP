@@ -6,18 +6,22 @@ module cop-topology {
 
     prefix cop-topology;
 
+    import cop-call {
+        prefix cop-call;
+    }
+
     organization "CTTC";
 
     description "YANG version of the Common Orchestration Protocol (COP).";
 
-    revision "2016-12-02" {
+    revision "2017-01-12" {
         description
         "Service Topology module for 5G-Crosshaul";
     }
 
     typedef topology-ref {
         type leafref {
-            path "/topologies/topology/topology_id";
+            path "/context/topology/topology_id";
         }
         description
             "A type for an absolute reference a topology instance.";
@@ -193,22 +197,22 @@ module cop-topology {
         }
         leaf source{
             type leafref {
-              path '/topologies/topology/nodes/node_id';
+              path '/context/topology/nodes/node_id';
             }
         }
         leaf target{
             type leafref {
-              path '/topologies/topology/nodes/node_id';
+              path '/context/topology/nodes/node_id';
             }
         }
         leaf local_ifid{
             type leafref {
-              path '/topologies/topology/nodes/edge_end/edge_end_id';
+              path '/context/topology/nodes/edge_end/edge_end_id';
             }
         }
         leaf remote_ifid{
             type leafref {
-              path '/topologies/topology/nodes/edge_end/edge_end_id';
+              path '/context/topology/nodes/edge_end/edge_end_id';
             }
         }
     }
@@ -249,35 +253,29 @@ module cop-topology {
     grouping wireless_edge{
         uses edge;
     }
+
     
-    grouping service_end_point_type{
-        leaf sep_id{
-            type string;
-        }
-        leaf name{
-            type string;
-        }
-        leaf edge_end_id{
-            type leafref {
-              path '/topologies/topology/nodes/edge_end/edge_end_id';
-            }
-        }
-        leaf node_id{
-            type leafref {
-              path '/topologies/topology/nodes/node_id';
-            }
-        }
-    }
-    
-    container topologies{
+    container context{
         config false;
+        leaf context_id{
+            type string;
+        }
+        leaf provider{
+            type boolean;
+            default false;
+        }
+        leaf parent_context{
+            type leafref{
+                path '/context/context_id';
+            }
+        }
         list topology{
             key "topology_id";
             uses topology;
         }
-        list service_end_point{
-            key "sep_id";
-            uses service_end_point_type;
+        list service_endpoint{
+            key "endpoint_id";
+            uses cop-call:service-endpoint;
         }
     }
 

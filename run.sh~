@@ -8,7 +8,7 @@ SWAGGER=""
 for i in $YANG; do
   echo item: $i
   cd yang
-  pyang -f swagger --swagger-camelcase ON $i.yang -o ../swagger/$i.json
+  pyang -f swagger $i.yang -o ../swagger/$i.json
   pyang -f uml $i.yang -o ../$i.uml
   cd ..
   java -jar plantuml.jar $i.uml        
