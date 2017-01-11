@@ -6,16 +6,16 @@ import backend.backend as be
 class CallsCallCallidZendImpl:
 
     @classmethod
-    def put(cls, callId, endpoint):
-        print str(endpoint)
+    def put(cls, callId, serviceendpoint):
+        print str(serviceendpoint)
         print 'handling put'
-        be.calls.call[callId] = endpoint
+        be.calls.call[callId] = serviceendpoint
 
     @classmethod
-    def post(cls, callId, endpoint):
-        print str(endpoint)
+    def post(cls, callId, serviceendpoint):
+        print str(serviceendpoint)
         print 'handling post'
-        be.calls.call[callId] = endpoint
+        be.calls.call[callId] = serviceendpoint
 
     @classmethod
     def delete(cls, callId):

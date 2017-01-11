@@ -1,6 +1,7 @@
 from objects_common.jsonObject import JsonObject
 from node import Node
 from edge import Edge
+from wirelessEdge import WirelessEdge
 from ethEdge import EthEdge
 from dwdmEdge import DwdmEdge
 from objects_common.arrayType import ArrayType
@@ -12,6 +13,6 @@ class Topology(JsonObject):
         self.topologyId=""
         self.underlayTopology=ArrayType.factory(str)
         self.nodes=KeyedArrayType(Node, 'nodeId')
-        self.edges=KeyedArrayType((EthEdge,DwdmEdge), 'edgeId', 'edgeType')
+        self.edges=KeyedArrayType((WirelessEdge,EthEdge,DwdmEdge), 'edgeId', 'edgeType')
         super(Topology, self).__init__(json_struct)
 

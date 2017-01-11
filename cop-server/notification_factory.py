@@ -87,8 +87,8 @@ class ServiceServerProtocol(WebSocketServerProtocol):
 class NotificationServerFactory():
 
     def __init__(self):
-        print '\nRunning notification server in port 8182'
-        factory = WebSocketServerFactory('ws://localhost:8182')
+        print '\nRunning notification server in port 8181'
+        factory = WebSocketServerFactory('ws://localhost:8181')
         factory.protocol = ServiceServerProtocol
         listenWS(factory)
         try:

@@ -6,16 +6,16 @@ import backend.backend as be
 class ConnectionsConnectionConnectionidAendImpl:
 
     @classmethod
-    def put(cls, connectionId, endpoint):
-        print str(endpoint)
+    def put(cls, connectionId, serviceendpoint):
+        print str(serviceendpoint)
         print 'handling put'
-        be.connections.connection[connectionId] = endpoint
+        be.connections.connection[connectionId] = serviceendpoint
 
     @classmethod
-    def post(cls, connectionId, endpoint):
-        print str(endpoint)
+    def post(cls, connectionId, serviceendpoint):
+        print str(serviceendpoint)
         print 'handling post'
-        be.connections.connection[connectionId] = endpoint
+        be.connections.connection[connectionId] = serviceendpoint
 
     @classmethod
     def delete(cls, connectionId):

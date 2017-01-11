@@ -7,28 +7,36 @@ import base64
 import re
 
 # BACKEND FUNCTIONS
-from funcs_cop_topology.topologiesTopologyImpl import TopologiesTopologyImpl
-from funcs_cop_topology.topologiesTopologyTopologyidEdgesEdgeidImpl import TopologiesTopologyTopologyidEdgesEdgeidImpl
-from funcs_cop_topology.topologiesTopologyTopologyidNodesNodeidEdge_EndImpl import TopologiesTopologyTopologyidNodesNodeidEdge_EndImpl
-from funcs_cop_topology.topologiesTopologyTopologyidNodesNodeidEdge_EndEdgeendidImpl import TopologiesTopologyTopologyidNodesNodeidEdge_EndEdgeendidImpl
-from funcs_cop_topology.topologiesTopologyTopologyidEdgesImpl import TopologiesTopologyTopologyidEdgesImpl
-from funcs_cop_topology.topologiesTopologyTopologyidNodesImpl import TopologiesTopologyTopologyidNodesImpl
-from funcs_cop_topology.topologiesService_End_PointSepidImpl import TopologiesService_End_PointSepidImpl
-from funcs_cop_topology.topologiesImpl import TopologiesImpl
-from funcs_cop_topology.topologiesTopologyTopologyidNodesNodeidImpl import TopologiesTopologyTopologyidNodesNodeidImpl
-from funcs_cop_topology.topologiesTopologyTopologyidImpl import TopologiesTopologyTopologyidImpl
-from funcs_cop_topology.topologiesService_End_PointImpl import TopologiesService_End_PointImpl
+from funcs_cop_topology.contextService_EndpointImpl import ContextService_EndpointImpl
+from funcs_cop_topology.contextTopologyImpl import ContextTopologyImpl
+from funcs_cop_topology.contextTopologyTopologyidNodesNodeidEdge_EndEdgeendidImpl import ContextTopologyTopologyidNodesNodeidEdge_EndEdgeendidImpl
+from funcs_cop_topology.contextTopologyTopologyidEdgesEdgeidImpl import ContextTopologyTopologyidEdgesEdgeidImpl
+from funcs_cop_topology.contextTopologyTopologyidNodesImpl import ContextTopologyTopologyidNodesImpl
+from funcs_cop_topology.contextTopologyTopologyidNodesNodeidImpl import ContextTopologyTopologyidNodesNodeidImpl
+from funcs_cop_topology.contextTopologyTopologyidNodesNodeidEdge_EndImpl import ContextTopologyTopologyidNodesNodeidEdge_EndImpl
+from funcs_cop_topology.contextService_EndpointEndpointidImpl import ContextService_EndpointEndpointidImpl
+from funcs_cop_topology.contextTopologyTopologyidImpl import ContextTopologyTopologyidImpl
+from funcs_cop_topology.contextTopologyTopologyidEdgesImpl import ContextTopologyTopologyidEdgesImpl
+from funcs_cop_topology.contextImpl import ContextImpl
 
 # CALLABLE OBJECTS
 from objects_cop_topology.node import Node
+from objects_cop_topology.transportLayerType import TransportLayerType
+from objects_cop_topology.wirelessEdge import WirelessEdge
 from objects_cop_topology.ethEdge import EthEdge
+from objects_cop_topology.trafficParams import TrafficParams
 from objects_cop_topology.edgeEnd import EdgeEnd
-from objects_cop_topology.topologiesSchema import TopologiesSchema
+from objects_cop_topology.pathType import PathType
 from objects_cop_topology.bitmap import Bitmap
 from objects_cop_topology.dwdmChannel import DwdmChannel
-from objects_cop_topology.serviceEndPointType import ServiceEndPointType
+from objects_cop_topology.contextSchema import ContextSchema
+from objects_cop_topology.connection import Connection
 from objects_cop_topology.edge import Edge
+from objects_cop_topology.call import Call
+from objects_cop_topology.label import Label
+from objects_cop_topology.serviceEndpoint import ServiceEndpoint
 from objects_cop_topology.dwdmEdge import DwdmEdge
+from objects_cop_topology.matchRules import MatchRules
 from objects_cop_topology.topology import Topology
 
 users = {"admin": "pswd1", "user": "pswd2"}
@@ -174,13 +182,27 @@ class Successful(Response):
         self.data = info
 
 
-#/restconf/config/topologies/topology/
-class TopologiesTopologyMethodView(MethodView):
+#/restconf/config/context/service_endpoint/
+class ContextService_EndpointMethodView(MethodView):
+
+    def get(self, ):
+        print "Retrieve operation of resource: service_endpoint"
+        try:
+            response = ContextService_EndpointImpl.get()
+        except KeyError as inst:
+            return NotFoundError(inst.args[0] + " not found")
+        else:
+            js = response.json_serializer()
+            return Successful("Successful operation",json_dumps(js))
+
+
+#/restconf/config/context/topology/
+class ContextTopologyMethodView(MethodView):
 
     def get(self, ):
         print "Retrieve operation of resource: topology"
         try:
-            response = TopologiesTopologyImpl.get()
+            response = ContextTopologyImpl.get()
         except KeyError as inst:
             return NotFoundError(inst.args[0] + " not found")
         else:
@@ -188,41 +210,13 @@ class TopologiesTopologyMethodView(MethodView):
             return Successful("Successful operation",json_dumps(js))
 
 
-#/restconf/config/topologies/topology/(\w+)/edges/(\w+)/
-class TopologiesTopologyTopologyidEdgesEdgeidMethodView(MethodView):
-
-    def get(self, topologyId, edgeId):
-        print "Retrieve operation of resource: edges"
-        try:
-            response = TopologiesTopologyTopologyidEdgesEdgeidImpl.get(topologyId, edgeId)
-        except KeyError as inst:
-            return NotFoundError(inst.args[0] + " not found")
-        else:
-            js = response.json_serializer()
-            return Successful("Successful operation",json_dumps(js))
-
-
-#/restconf/config/topologies/topology/(\w+)/nodes/(\w+)/edge_end/
-class TopologiesTopologyTopologyidNodesNodeidEdge_EndMethodView(MethodView):
-
-    def get(self, topologyId, nodeId):
-        print "Retrieve operation of resource: edge_end"
-        try:
-            response = TopologiesTopologyTopologyidNodesNodeidEdge_EndImpl.get(topologyId, nodeId)
-        except KeyError as inst:
-            return NotFoundError(inst.args[0] + " not found")
-        else:
-            js = response.json_serializer()
-            return Successful("Successful operation",json_dumps(js))
-
-
-#/restconf/config/topologies/topology/(\w+)/nodes/(\w+)/edge_end/(\w+)/
-class TopologiesTopologyTopologyidNodesNodeidEdge_EndEdgeendidMethodView(MethodView):
+#/restconf/config/context/topology/(\w+)/nodes/(\w+)/edge_end/(\w+)/
+class ContextTopologyTopologyidNodesNodeidEdge_EndEdgeendidMethodView(MethodView):
 
     def get(self, topologyId, nodeId, edgeEndId):
         print "Retrieve operation of resource: edge_end"
         try:
-            response = TopologiesTopologyTopologyidNodesNodeidEdge_EndEdgeendidImpl.get(topologyId, nodeId, edgeEndId)
+            response = ContextTopologyTopologyidNodesNodeidEdge_EndEdgeendidImpl.get(topologyId, nodeId, edgeEndId)
         except KeyError as inst:
             return NotFoundError(inst.args[0] + " not found")
         else:
@@ -230,13 +224,13 @@ class TopologiesTopologyTopologyidNodesNodeidEdge_EndEdgeendidMethodView(MethodV
             return Successful("Successful operation",json_dumps(js))
 
 
-#/restconf/config/topologies/topology/(\w+)/edges/
-class TopologiesTopologyTopologyidEdgesMethodView(MethodView):
+#/restconf/config/context/topology/(\w+)/edges/(\w+)/
+class ContextTopologyTopologyidEdgesEdgeidMethodView(MethodView):
 
-    def get(self, topologyId):
+    def get(self, topologyId, edgeId):
         print "Retrieve operation of resource: edges"
         try:
-            response = TopologiesTopologyTopologyidEdgesImpl.get(topologyId)
+            response = ContextTopologyTopologyidEdgesEdgeidImpl.get(topologyId, edgeId)
         except KeyError as inst:
             return NotFoundError(inst.args[0] + " not found")
         else:
@@ -244,13 +238,13 @@ class TopologiesTopologyTopologyidEdgesMethodView(MethodView):
             return Successful("Successful operation",json_dumps(js))
 
 
-#/restconf/config/topologies/topology/(\w+)/nodes/
-class TopologiesTopologyTopologyidNodesMethodView(MethodView):
+#/restconf/config/context/topology/(\w+)/nodes/
+class ContextTopologyTopologyidNodesMethodView(MethodView):
 
     def get(self, topologyId):
         print "Retrieve operation of resource: nodes"
         try:
-            response = TopologiesTopologyTopologyidNodesImpl.get(topologyId)
+            response = ContextTopologyTopologyidNodesImpl.get(topologyId)
         except KeyError as inst:
             return NotFoundError(inst.args[0] + " not found")
         else:
@@ -258,41 +252,13 @@ class TopologiesTopologyTopologyidNodesMethodView(MethodView):
             return Successful("Successful operation",json_dumps(js))
 
 
-#/restconf/config/topologies/service_end_point/(\w+)/
-class TopologiesService_End_PointSepidMethodView(MethodView):
-
-    def get(self, sepId):
-        print "Retrieve operation of resource: service_end_point"
-        try:
-            response = TopologiesService_End_PointSepidImpl.get(sepId)
-        except KeyError as inst:
-            return NotFoundError(inst.args[0] + " not found")
-        else:
-            js = response.json_serializer()
-            return Successful("Successful operation",json_dumps(js))
-
-
-#/restconf/config/topologies/
-class TopologiesMethodView(MethodView):
-
-    def get(self, ):
-        print "Retrieve operation of resource: topologies"
-        try:
-            response = TopologiesImpl.get()
-        except KeyError as inst:
-            return NotFoundError(inst.args[0] + " not found")
-        else:
-            js = response.json_serializer()
-            return Successful("Successful operation",json_dumps(js))
-
-
-#/restconf/config/topologies/topology/(\w+)/nodes/(\w+)/
-class TopologiesTopologyTopologyidNodesNodeidMethodView(MethodView):
+#/restconf/config/context/topology/(\w+)/nodes/(\w+)/
+class ContextTopologyTopologyidNodesNodeidMethodView(MethodView):
 
     def get(self, topologyId, nodeId):
         print "Retrieve operation of resource: nodes"
         try:
-            response = TopologiesTopologyTopologyidNodesNodeidImpl.get(topologyId, nodeId)
+            response = ContextTopologyTopologyidNodesNodeidImpl.get(topologyId, nodeId)
         except KeyError as inst:
             return NotFoundError(inst.args[0] + " not found")
         else:
@@ -300,13 +266,41 @@ class TopologiesTopologyTopologyidNodesNodeidMethodView(MethodView):
             return Successful("Successful operation",json_dumps(js))
 
 
-#/restconf/config/topologies/topology/(\w+)/
-class TopologiesTopologyTopologyidMethodView(MethodView):
+#/restconf/config/context/topology/(\w+)/nodes/(\w+)/edge_end/
+class ContextTopologyTopologyidNodesNodeidEdge_EndMethodView(MethodView):
+
+    def get(self, topologyId, nodeId):
+        print "Retrieve operation of resource: edge_end"
+        try:
+            response = ContextTopologyTopologyidNodesNodeidEdge_EndImpl.get(topologyId, nodeId)
+        except KeyError as inst:
+            return NotFoundError(inst.args[0] + " not found")
+        else:
+            js = response.json_serializer()
+            return Successful("Successful operation",json_dumps(js))
+
+
+#/restconf/config/context/service_endpoint/(\w+)/
+class ContextService_EndpointEndpointidMethodView(MethodView):
+
+    def get(self, endpointId):
+        print "Retrieve operation of resource: service_endpoint"
+        try:
+            response = ContextService_EndpointEndpointidImpl.get(endpointId)
+        except KeyError as inst:
+            return NotFoundError(inst.args[0] + " not found")
+        else:
+            js = response.json_serializer()
+            return Successful("Successful operation",json_dumps(js))
+
+
+#/restconf/config/context/topology/(\w+)/
+class ContextTopologyTopologyidMethodView(MethodView):
 
     def get(self, topologyId):
         print "Retrieve operation of resource: topology"
         try:
-            response = TopologiesTopologyTopologyidImpl.get(topologyId)
+            response = ContextTopologyTopologyidImpl.get(topologyId)
         except KeyError as inst:
             return NotFoundError(inst.args[0] + " not found")
         else:
@@ -314,13 +308,27 @@ class TopologiesTopologyTopologyidMethodView(MethodView):
             return Successful("Successful operation",json_dumps(js))
 
 
-#/restconf/config/topologies/service_end_point/
-class TopologiesService_End_PointMethodView(MethodView):
+#/restconf/config/context/topology/(\w+)/edges/
+class ContextTopologyTopologyidEdgesMethodView(MethodView):
+
+    def get(self, topologyId):
+        print "Retrieve operation of resource: edges"
+        try:
+            response = ContextTopologyTopologyidEdgesImpl.get(topologyId)
+        except KeyError as inst:
+            return NotFoundError(inst.args[0] + " not found")
+        else:
+            js = response.json_serializer()
+            return Successful("Successful operation",json_dumps(js))
+
+
+#/restconf/config/context/
+class ContextMethodView(MethodView):
 
     def get(self, ):
-        print "Retrieve operation of resource: service_end_point"
+        print "Retrieve operation of resource: context"
         try:
-            response = TopologiesService_End_PointImpl.get()
+            response = ContextImpl.get()
         except KeyError as inst:
             return NotFoundError(inst.args[0] + " not found")
         else:
@@ -329,14 +337,14 @@ class TopologiesService_End_PointMethodView(MethodView):
 
 
 
-getattr(sys.modules[__name__], __name__).add_url_rule("/restconf/config/topologies/topology/", view_func = globals()["TopologiesTopologyMethodView"].as_view('"TopologiesTopology"'+'"_api"'), methods=['GET'])
-getattr(sys.modules[__name__], __name__).add_url_rule("/restconf/config/topologies/topology/<topologyId>/edges/<edgeId>/", view_func = globals()["TopologiesTopologyTopologyidEdgesEdgeidMethodView"].as_view('"TopologiesTopologyTopologyidEdgesEdgeid"'+'"_api"'), methods=['GET'])
-getattr(sys.modules[__name__], __name__).add_url_rule("/restconf/config/topologies/topology/<topologyId>/nodes/<nodeId>/edge_end/", view_func = globals()["TopologiesTopologyTopologyidNodesNodeidEdge_EndMethodView"].as_view('"TopologiesTopologyTopologyidNodesNodeidEdge_End"'+'"_api"'), methods=['GET'])
-getattr(sys.modules[__name__], __name__).add_url_rule("/restconf/config/topologies/topology/<topologyId>/nodes/<nodeId>/edge_end/<edgeEndId>/", view_func = globals()["TopologiesTopologyTopologyidNodesNodeidEdge_EndEdgeendidMethodView"].as_view('"TopologiesTopologyTopologyidNodesNodeidEdge_EndEdgeendid"'+'"_api"'), methods=['GET'])
-getattr(sys.modules[__name__], __name__).add_url_rule("/restconf/config/topologies/topology/<topologyId>/edges/", view_func = globals()["TopologiesTopologyTopologyidEdgesMethodView"].as_view('"TopologiesTopologyTopologyidEdges"'+'"_api"'), methods=['GET'])
-getattr(sys.modules[__name__], __name__).add_url_rule("/restconf/config/topologies/topology/<topologyId>/nodes/", view_func = globals()["TopologiesTopologyTopologyidNodesMethodView"].as_view('"TopologiesTopologyTopologyidNodes"'+'"_api"'), methods=['GET'])
-getattr(sys.modules[__name__], __name__).add_url_rule("/restconf/config/topologies/service_end_point/<sepId>/", view_func = globals()["TopologiesService_End_PointSepidMethodView"].as_view('"TopologiesService_End_PointSepid"'+'"_api"'), methods=['GET'])
-getattr(sys.modules[__name__], __name__).add_url_rule("/restconf/config/topologies/", view_func = globals()["TopologiesMethodView"].as_view('"Topologies"'+'"_api"'), methods=['GET'])
-getattr(sys.modules[__name__], __name__).add_url_rule("/restconf/config/topologies/topology/<topologyId>/nodes/<nodeId>/", view_func = globals()["TopologiesTopologyTopologyidNodesNodeidMethodView"].as_view('"TopologiesTopologyTopologyidNodesNodeid"'+'"_api"'), methods=['GET'])
-getattr(sys.modules[__name__], __name__).add_url_rule("/restconf/config/topologies/topology/<topologyId>/", view_func = globals()["TopologiesTopologyTopologyidMethodView"].as_view('"TopologiesTopologyTopologyid"'+'"_api"'), methods=['GET'])
-getattr(sys.modules[__name__], __name__).add_url_rule("/restconf/config/topologies/service_end_point/", view_func = globals()["TopologiesService_End_PointMethodView"].as_view('"TopologiesService_End_Point"'+'"_api"'), methods=['GET'])
+getattr(sys.modules[__name__], __name__).add_url_rule("/restconf/config/context/service_endpoint/", view_func = globals()["ContextService_EndpointMethodView"].as_view('"ContextService_Endpoint"'+'"_api"'), methods=['GET'])
+getattr(sys.modules[__name__], __name__).add_url_rule("/restconf/config/context/topology/", view_func = globals()["ContextTopologyMethodView"].as_view('"ContextTopology"'+'"_api"'), methods=['GET'])
+getattr(sys.modules[__name__], __name__).add_url_rule("/restconf/config/context/topology/<topologyId>/nodes/<nodeId>/edge_end/<edgeEndId>/", view_func = globals()["ContextTopologyTopologyidNodesNodeidEdge_EndEdgeendidMethodView"].as_view('"ContextTopologyTopologyidNodesNodeidEdge_EndEdgeendid"'+'"_api"'), methods=['GET'])
+getattr(sys.modules[__name__], __name__).add_url_rule("/restconf/config/context/topology/<topologyId>/edges/<edgeId>/", view_func = globals()["ContextTopologyTopologyidEdgesEdgeidMethodView"].as_view('"ContextTopologyTopologyidEdgesEdgeid"'+'"_api"'), methods=['GET'])
+getattr(sys.modules[__name__], __name__).add_url_rule("/restconf/config/context/topology/<topologyId>/nodes/", view_func = globals()["ContextTopologyTopologyidNodesMethodView"].as_view('"ContextTopologyTopologyidNodes"'+'"_api"'), methods=['GET'])
+getattr(sys.modules[__name__], __name__).add_url_rule("/restconf/config/context/topology/<topologyId>/nodes/<nodeId>/", view_func = globals()["ContextTopologyTopologyidNodesNodeidMethodView"].as_view('"ContextTopologyTopologyidNodesNodeid"'+'"_api"'), methods=['GET'])
+getattr(sys.modules[__name__], __name__).add_url_rule("/restconf/config/context/topology/<topologyId>/nodes/<nodeId>/edge_end/", view_func = globals()["ContextTopologyTopologyidNodesNodeidEdge_EndMethodView"].as_view('"ContextTopologyTopologyidNodesNodeidEdge_End"'+'"_api"'), methods=['GET'])
+getattr(sys.modules[__name__], __name__).add_url_rule("/restconf/config/context/service_endpoint/<endpointId>/", view_func = globals()["ContextService_EndpointEndpointidMethodView"].as_view('"ContextService_EndpointEndpointid"'+'"_api"'), methods=['GET'])
+getattr(sys.modules[__name__], __name__).add_url_rule("/restconf/config/context/topology/<topologyId>/", view_func = globals()["ContextTopologyTopologyidMethodView"].as_view('"ContextTopologyTopologyid"'+'"_api"'), methods=['GET'])
+getattr(sys.modules[__name__], __name__).add_url_rule("/restconf/config/context/topology/<topologyId>/edges/", view_func = globals()["ContextTopologyTopologyidEdgesMethodView"].as_view('"ContextTopologyTopologyidEdges"'+'"_api"'), methods=['GET'])
+getattr(sys.modules[__name__], __name__).add_url_rule("/restconf/config/context/", view_func = globals()["ContextMethodView"].as_view('"Context"'+'"_api"'), methods=['GET'])
