@@ -278,7 +278,24 @@ module cop-topology {
             uses cop-call:service-endpoint;
         }
     }
-
+    notification remove_edge{
+        uses edge;
+    }
+    notification add_edge{
+        uses edge;
+    }
+    notification remove_edgeEnd{
+        uses edgeEnd;
+    }
+    notification add_edgeEnd{
+        uses edgeEnd;
+    }
+    notification remove_node{
+        uses node;
+    }
+    notification add_node{
+        uses node;
+    }
     notification update_topology{
         uses topology;
     }
