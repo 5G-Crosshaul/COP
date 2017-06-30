@@ -278,6 +278,18 @@ module cop-topology {
             uses cop-call:service-endpoint;
         }
     }
+    grouping notification_edge_end_object{
+        leaf node_id{
+	    type leafref {
+              path '/context/topology/nodes/node_id';
+            }
+	}
+	container edge_end{
+	    uses edge_end;
+	}
+	
+    }
+    
     notification remove_edge{
         uses edge;
     }
@@ -285,10 +297,10 @@ module cop-topology {
         uses edge;
     }
     notification remove_edgeEnd{
-        uses edge_end;
+        uses notification_edge_end_object;
     }
     notification add_edgeEnd{
-        uses edge_end;
+        uses notification_edge_end_object;
     }
     notification remove_node{
         uses node;
