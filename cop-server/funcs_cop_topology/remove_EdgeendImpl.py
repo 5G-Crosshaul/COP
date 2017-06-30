@@ -4,10 +4,10 @@ import json
 import time
 sys.path.append(os.path.join(os.path.dirname(os.path.realpath(__file__))))
 
-from objects_cop_topology.topology import Topology
+from objects_cop_topology.edgeEnd import EdgeEnd
 
 
-class Update_TopologyImpl (threading.Thread):
+class Remove_EdgeendImpl (threading.Thread):
     def __init__(self, handler):
         threading.Thread.__init__(self)
         self.event = True
@@ -21,5 +21,5 @@ class Update_TopologyImpl (threading.Thread):
         while self.event:
             time.sleep(1)
 
-        payload = json.dumps(Topology().json_serializer()).encode('utf8')
+        payload = json.dumps(EdgeEnd().json_serializer()).encode('utf8')
         self.handler.sendMessage(payload, False)

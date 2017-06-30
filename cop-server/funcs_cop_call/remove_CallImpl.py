@@ -21,5 +21,5 @@ class Remove_CallImpl (threading.Thread):
         while self.event:
             time.sleep(1)
 
-        payload = json.dumps(Call({"callId":"Example_Remove_Call"}).json_serializer()).encode('utf8')
+        payload = json.dumps(Call().json_serializer()).encode('utf8')
         self.handler.sendMessage(payload, False)
