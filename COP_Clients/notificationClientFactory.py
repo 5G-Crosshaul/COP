@@ -47,7 +47,7 @@ class WSClientFactory(threading.Thread, WebSocketClientFactory):
         self.uri = uri
         self.notification_q = notificationQ
         self.running = True
-        WebSocketClientFactory.__init__(self,'ws://'+str(self.uri[7:]), debug=True)
+        WebSocketClientFactory.__init__(self,'ws://'+str(self.uri[7:]))
         threading.Thread.__init__(self)
         self.protocol = MyClientProtocol
         self.setProtocolOptions(openHandshakeTimeout=15)
