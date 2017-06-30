@@ -285,10 +285,10 @@ module cop-topology {
         uses edge;
     }
     notification remove_edgeEnd{
-        uses edgeEnd;
+        uses edge_end;
     }
     notification add_edgeEnd{
-        uses edgeEnd;
+        uses edge_end;
     }
     notification remove_node{
         uses node;
